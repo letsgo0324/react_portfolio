@@ -1,0 +1,25 @@
+#men {
+	width: 100%;
+
+	.inner {
+		width: 1180px;
+		min-height: 500px;
+		margin: 100px auto;
+
+		h1 {
+			font: normal 32px/1 'Bebas Neue';
+			color: #222;
+			letter-spacing: 2px;
+			margin-bottom: 50px;
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	#men {
+		.inner {
+			width: 100%;
+			padding: 0 30px;
+		}
+	}
+}

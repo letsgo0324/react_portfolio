@@ -1,0 +1,87 @@
+header {
+	width: 100%;
+
+	.inner {
+		width: 1180px;
+		height: 80px;
+		margin: 0 auto;
+		position: relative;
+
+		h1 {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			width: 75px;
+			height: 35px;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		#gnb {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+
+			li {
+				display: inline-block;
+				margin-right: 20px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				a {
+					font: normal 16px/1 'Bebas Neue';
+					color: #222;
+					letter-spacing: 2px;
+				}
+			}
+		}
+
+		.fa-bars {
+			font-size: 26px;
+			color: #222;
+			position: absolute;
+			top: 50%;
+			right: 30px;
+			transform: translateY(-50%);
+			cursor: pointer;
+			display: none;
+		}
+	}
+
+	&.main {
+		background: transparent;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	header {
+		.inner {
+			width: 100%;
+			padding: 0 30px;
+
+			h1 {
+				left: 30px;
+			}
+
+			#gnb {
+				display: none;
+			}
+
+			.fa-bars {
+				display: block;
+			}
+		}
+	}
+}
