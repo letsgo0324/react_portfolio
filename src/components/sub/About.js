@@ -36,6 +36,11 @@ function About() {
 					})}
 				</div>
 			</div>
+
+			<div className='history'>
+				<h1>HISTORY</h1>
+				<div></div>
+			</div>
 		</Layout>
 	);
 }

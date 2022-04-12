@@ -6,7 +6,13 @@ function Join() {
 			name={'join'}
 			subName1={'Privacy'}
 			subName2={'Account'}
-			subVisual={'figure6'}></Layout>
+			subVisual={'figure6'}>
+			<div className='privacy'></div>
+			<div className='account'>
+				<h1>ACCOUNT</h1>
+				<div></div>
+			</div>
+		</Layout>
 	);
 }
 

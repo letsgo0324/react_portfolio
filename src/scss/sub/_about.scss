@@ -1,6 +1,8 @@
 .about {
 	.inner {
 		.memberList {
+			margin-bottom: 100px;
+
 			.wrap {
 				article {
 					width: 280px;
@@ -119,6 +121,12 @@
 						}
 					}
 				}
+			}
+		}
+
+		.history {
+			> div {
+				min-height: 300px;
 			}
 		}
 	}

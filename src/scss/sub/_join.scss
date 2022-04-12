@@ -1,0 +1,13 @@
+.join {
+	.inner {
+		.privacy {
+			margin-bottom: 100px;
+			min-height: 300px;
+		}
+		.account {
+			> div {
+				min-height: 300px;
+			}
+		}
+	}
+}

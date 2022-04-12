@@ -1,0 +1,13 @@
+.community {
+	.inner {
+		.news {
+			margin-bottom: 100px;
+			min-height: 300px;
+		}
+		.shop {
+			> div {
+				min-height: 300px;
+			}
+		}
+	}
+}

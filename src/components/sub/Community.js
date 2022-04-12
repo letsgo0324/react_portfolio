@@ -6,7 +6,13 @@ function Community() {
 			name={'community'}
 			subName1={'News'}
 			subName2={'Shop'}
-			subVisual={'figure2'}></Layout>
+			subVisual={'figure2'}>
+			<div className='news'></div>
+			<div className='shop'>
+				<h1>SHOP</h1>
+				<div></div>
+			</div>
+		</Layout>
 	);
 }
 

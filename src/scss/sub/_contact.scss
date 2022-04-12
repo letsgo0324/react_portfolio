@@ -1,0 +1,13 @@
+.contact {
+	.inner {
+		.faqs {
+			margin-bottom: 100px;
+			min-height: 300px;
+		}
+		.location {
+			> div {
+				min-height: 300px;
+			}
+		}
+	}
+}

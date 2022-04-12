@@ -22,24 +22,31 @@ function Youtube() {
 			subName1={'Youtube'}
 			subName2={'Metaverse'}
 			subVisual={'figure4'}>
-			{items.map((item, idx) => {
-				const desc = item.snippet.description;
-				const date = item.snippet.publishedAt;
+			<div className='youtubeList'>
+				{items.map((item, idx) => {
+					const desc = item.snippet.description;
+					const date = item.snippet.publishedAt;
 
-				return (
-					<article key={idx}>
-						<div className='pic'>
-							<img src={item.snippet.thumbnails.standard.url} />
-						</div>
-						<div className='txt'>
-							<span>{date.split('T')[0]}</span>
-							<h2>{item.snippet.title}</h2>
-							<p>{desc.length > 200 ? desc.substr(0, 200) + '..' : desc}</p>
-							<a href='#'>VIEW MORE</a>
-						</div>
-					</article>
-				);
-			})}
+					return (
+						<article key={idx}>
+							<div className='pic'>
+								<img src={item.snippet.thumbnails.standard.url} />
+							</div>
+							<div className='txt'>
+								<span>{date.split('T')[0]}</span>
+								<h2>{item.snippet.title}</h2>
+								<p>{desc.length > 200 ? desc.substr(0, 200) + '..' : desc}</p>
+								<a href='#'>VIEW MORE</a>
+							</div>
+						</article>
+					);
+				})}
+			</div>
+
+			<div className='metaverse'>
+				<h1>METAVERSE</h1>
+				<div></div>
+			</div>
 		</Layout>
 	);
 }

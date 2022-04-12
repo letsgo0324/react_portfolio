@@ -1,0 +1,13 @@
+.gallery {
+	.inner {
+		.gallery {
+			margin-bottom: 100px;
+			min-height: 300px;
+		}
+		.collaboration {
+			> div {
+				min-height: 300px;
+			}
+		}
+	}
+}
