@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "name": "Oliver",
+      "position": "CEO",
+      "description": "Shortening the distance between our consumers and the brand is your goal.",
+      "pic": "member1.jpg"
+    },
+    {
+      "name": "Sophia",
+      "position": "Vice President",
+      "description": "Optimizing processes with a sustainable approach and an agile mindset.",
+      "pic": "member2.jpg"
+    },
+    {
+      "name": "Amelia",
+      "position": "Sales Team",
+      "description": "You'll be one of the people with an overall vision of how creativity is taking shape in our stores.",
+      "pic": "member3.jpg"
+    },
+    {
+      "name": "Liam",
+      "position": "Marketing Team",
+      "description": "We are looking for Dream-makers who aim to be part of a team that develops.",
+      "pic": "member4.jpg"
+    },
+    {
+      "name": "Owen",
+      "position": "Digital Team",
+      "description": "You will have to own a vision and a mindset oriented towards innovation, being able to collaborate.",
+      "pic": "member5.jpg"
+    },
+    {
+      "name": "Isabella",
+      "position": "Design Team",
+      "description": "You'll be ensuring a groundbreaking level of artistry and consistency within each project.",
+      "pic": "member6.jpg"
+    },
+    {
+      "name": "Tyler",
+      "position": "Finance Team",
+      "description": "You'll be expressing your team working attitude within a diverse group of people.",
+      "pic": "member7.jpg"
+    },
+    {
+      "name": "Zoe",
+      "position": "Merchandising Team",
+      "description": "Merchandising brings the brand even closer to everyday life, enhancing a sense of community.",
+      "pic": "member8.jpg"
+    }
+  ]
+}

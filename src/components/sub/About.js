@@ -1,22 +1,42 @@
-import React from 'react';
-const path = process.env.PUBLIC_URL;
+import Layout from '../common/Layout';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 function About() {
+	const path = process.env.PUBLIC_URL;
+	const [members, setMembers] = useState([]);
+
+	useEffect(() => {
+		axios.get(`${path}/DB/member.json`).then((json) => {
+			setMembers(json.data.data);
+		});
+	}, []);
+
 	return (
-		<section className='content about'>
-			<figure>
-				<div className='inner'>
-					<h1>ABOUT</h1>
-					<p>History | Members</p>
+		<Layout
+			name={'about'}
+			subName1={'Members'}
+			subName2={'History'}
+			subVisual={'figure1'}>
+			<div className='memberList'>
+				<div className='wrap'>
+					{members.map((member, idx) => {
+						return (
+							<article key={idx}>
+								<div className='pic'>
+									<img src={`${path}/img/${member.pic}`} />
+								</div>
+								<div className='txt'>
+									<h2>{member.name}</h2>
+									<h3>{member.position}</h3>
+									<p>{member.description}</p>
+								</div>
+							</article>
+						);
+					})}
 				</div>
-				<div className='pic'>
-					<img src={`${path}/img/figure1.png`} />
-				</div>
-			</figure>
-			<div className='inner'>
-				<h1>HISTORY</h1>
 			</div>
-		</section>
+		</Layout>
 	);
 }
 

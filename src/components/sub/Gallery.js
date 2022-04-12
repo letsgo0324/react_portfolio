@@ -1,13 +1,12 @@
-import React from 'react';
+import Layout from '../common/Layout';
 
 function Gallery() {
 	return (
-		<section className='content gallery'>
-			<figure></figure>
-			<div className='inner'>
-				<h1>Gallery</h1>
-			</div>
-		</section>
+		<Layout
+			name={'gallery'}
+			subName1={'Gallery'}
+			subName2={'Collaboration'}
+			subVisual={'figure3'}></Layout>
 	);
 }
 

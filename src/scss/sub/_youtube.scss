@@ -1,0 +1,153 @@
+.youtube > .inner {
+	article {
+		width: 100%;
+		height: 500px;
+		position: relative;
+		border-top: 1px solid #222;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		padding: 50px 0;
+
+		&:last-child {
+			border-bottom: 1px solid #222;
+		}
+
+		> .pic {
+			width: 60%;
+			height: 400px;
+			position: relative;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		> .txt {
+			width: 38%;
+			height: 400px;
+			position: relative;
+
+			span {
+				display: block;
+				margin-bottom: 20px;
+				font: 16px/1 'Smooch Sans';
+				color: #555;
+			}
+			h2 {
+				font: bold 55px/1.2 'Smooch Sans';
+				color: #222;
+			}
+			p {
+				position: absolute;
+				bottom: 50px;
+				font: 18px/1.5 'Smooch Sans';
+				color: #222;
+			}
+			a {
+				display: block;
+				position: absolute;
+				bottom: 0;
+				font: bold 16px/1 'Smooch Sans';
+				color: #555;
+				border-bottom: 2px solid #555;
+				padding-bottom: 2px;
+
+				&::after {
+					content: '→';
+					display: block;
+					color: #555;
+					position: absolute;
+					bottom: 0;
+					left: 50px;
+					font-size: 16px;
+					color: #6fd885;
+					opacity: 0;
+					transition: 0.5s;
+				}
+				&:hover {
+					color: #6fd885;
+					border-bottom: 2px solid #6fd885;
+
+					&::after {
+						left: 60px;
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		&:nth-of-type(2n) {
+			> .pic {
+				position: absolute;
+				right: 0;
+			}
+			> .txt {
+				position: absolute;
+				left: 0;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.youtube > .inner {
+		article {
+			height: auto;
+			display: block;
+
+			> .pic {
+				width: 100%;
+				height: 260px;
+				margin-bottom: 30px;
+			}
+
+			> .txt {
+				width: 100%;
+				height: auto;
+
+				h2 {
+					font-size: 40px;
+					margin-bottom: 60px;
+				}
+				p {
+					position: relative;
+				}
+			}
+
+			&:nth-of-type(2n) {
+				> .pic {
+					position: relative;
+				}
+				> .txt {
+					position: relative;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.youtube > .inner {
+		article {
+			> .pic {
+				height: 150px;
+			}
+
+			> .txt {
+				width: 100%;
+				height: auto;
+
+				h2 {
+					font-size: 30px;
+				}
+				p {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}

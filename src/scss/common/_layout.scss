@@ -4,14 +4,65 @@
 	figure {
 		width: 100%;
 		height: 300px;
-		background: #eee;
+		position: relative;
+		background: #222;
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: 30px;
+			right: 0;
+			width: 55vw;
+			height: 210px;
+			background: rgba(111, 216, 134, 0.4);
+		}
+
+		> .inner {
+			width: 1180px;
+			min-height: 300px;
+			margin: 0 auto;
+			position: relative;
+			z-index: 1;
+
+			h1 {
+				font: 6vw/1 'Bebas Neue';
+				color: #eee;
+				padding-top: 80px;
+				margin-bottom: 10px;
+				letter-spacing: 2px;
+			}
+			p {
+				font: 20px/1 'Smooch Sans';
+				color: #eee;
+				letter-spacing: 1px;
+			}
+		}
+
+		.pic {
+			position: absolute;
+			right: 0;
+			top: 30px;
+			width: 57vw;
+			height: 210px;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: left center;
+			}
+		}
 	}
 
-	.inner {
+	> .inner {
 		width: 1180px;
 		min-height: 500px;
 		margin: 100px auto;
 		position: relative;
+		transform: translateY(100px);
+		opacity: 0;
+		transition: 1s;
 
 		h1 {
 			font: normal 32px/1 'Bebas Neue';
@@ -20,11 +71,55 @@
 			margin-bottom: 50px;
 		}
 	}
+
+	&.on {
+		> .inner {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
 }
 
 @media screen and (max-width: $tablet) {
 	.content {
-		.inner {
+		figure {
+			> .inner {
+				width: 100%;
+				padding: 0 30px;
+
+				h1 {
+					font-size: 70px;
+				}
+			}
+		}
+		> .inner {
+			width: 100%;
+			padding: 0 30px;
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.content {
+		figure {
+			height: 160px;
+
+			&::after {
+				display: none;
+			}
+			> .inner {
+				min-height: 160px;
+
+				h1 {
+					padding-top: 20px;
+					font-size: 50px;
+				}
+			}
+			> .pic {
+				display: none;
+			}
+		}
+		> .inner {
 			width: 100%;
 			padding: 0 30px;
 		}

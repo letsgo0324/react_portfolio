@@ -11,7 +11,7 @@ function Header(props) {
 			<div className='inner'>
 				<h1>
 					<NavLink exact to='/'>
-						<img src={`${props.path}/img/logo.png`} />
+						<img src={props.logoSrc} />
 					</NavLink>
 				</h1>
 

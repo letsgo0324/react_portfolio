@@ -63,6 +63,16 @@ header {
 		left: 0;
 		z-index: 2;
 	}
+	&.sub {
+		background: #222;
+
+		#gnb li a {
+			color: #eee;
+		}
+		.fa-bars {
+			color: #eee;
+		}
+	}
 }
 
 @media screen and (max-width: $tablet) {

@@ -29,7 +29,7 @@ function App() {
 		<>
 			<Switch>
 				<Route exact path='/'>
-					<Header type={'main'} path={path} />
+					<Header type={'main'} path={path} logoSrc={`${path}/img/logo1.png`} />
 
 					<Visual />
 					<Women />
@@ -41,7 +41,7 @@ function App() {
 				</Route>
 
 				<Route path='/'>
-					<Header type={'media'} path={path} />
+					<Header type={'sub'} path={path} logoSrc={`${path}/img/logo2.png`} />
 				</Route>
 			</Switch>
 

@@ -1,13 +1,12 @@
-import React from 'react';
+import Layout from '../common/Layout';
 
 function Join() {
 	return (
-		<section className='content join'>
-			<figure></figure>
-			<div className='inner'>
-				<h1>Join</h1>
-			</div>
-		</section>
+		<Layout
+			name={'join'}
+			subName1={'Privacy'}
+			subName2={'Account'}
+			subVisual={'figure6'}></Layout>
 	);
 }
 

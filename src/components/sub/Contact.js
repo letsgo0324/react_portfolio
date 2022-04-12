@@ -1,13 +1,12 @@
-import React from 'react';
+import Layout from '../common/Layout';
 
 function Contact() {
 	return (
-		<section className='content contact'>
-			<figure></figure>
-			<div className='inner'>
-				<h1>Contact</h1>
-			</div>
-		</section>
+		<Layout
+			name={'contact'}
+			subName1={'FAQs'}
+			subName2={'Location'}
+			subVisual={'figure5'}></Layout>
 	);
 }
 
