@@ -5,11 +5,11 @@ function Community() {
 		<Layout
 			name={'community'}
 			subName1={'News'}
-			subName2={'Shop'}
+			subName2={'Collaboration'}
 			subVisual={'figure2'}>
 			<div className='news'></div>
-			<div className='shop'>
-				<h1>SHOP</h1>
+			<div className='collaboration'>
+				<h1>COLLABORATION</h1>
 				<div></div>
 			</div>
 		</Layout>

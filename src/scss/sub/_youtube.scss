@@ -21,11 +21,52 @@
 				width: 60%;
 				height: 400px;
 				position: relative;
+				cursor: pointer;
+
+				&::after {
+					content: '▶';
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					font-size: 50px;
+					color: #fff;
+					opacity: 0;
+					transition: 0.3s;
+				}
+				&::before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: #6fd885;
+					opacity: 0;
+					transition: 0.3s;
+				}
 
 				img {
 					width: 100%;
 					height: 100%;
 					object-fit: cover;
+					transition: 0.3s;
+				}
+
+				&:hover {
+					&::after {
+						opacity: 0.9;
+						z-index: 2;
+					}
+					&::before {
+						opacity: 0.5;
+						z-index: 1;
+					}
+					img {
+						filter: grayscale(1);
+					}
 				}
 			}
 
@@ -34,13 +75,13 @@
 				height: 400px;
 				position: relative;
 
-				span {
+				h2 {
 					display: block;
 					margin-bottom: 20px;
 					font: 16px/1 'Smooch Sans';
 					color: #555;
 				}
-				h2 {
+				h3 {
 					font: bold 55px/1.2 'Smooch Sans';
 					color: #222;
 				}
@@ -50,7 +91,7 @@
 					font: 18px/1.5 'Smooch Sans';
 					color: #222;
 				}
-				a {
+				.view {
 					display: block;
 					position: absolute;
 					bottom: 0;
@@ -58,6 +99,7 @@
 					color: #555;
 					border-bottom: 2px solid #555;
 					padding-bottom: 2px;
+					cursor: pointer;
 
 					&::after {
 						content: '→';
@@ -120,7 +162,7 @@
 					width: 100%;
 					height: auto;
 
-					h2 {
+					h3 {
 						font-size: 40px;
 						margin-bottom: 60px;
 					}
@@ -144,20 +186,22 @@
 
 @media screen and (max-width: $mobile) {
 	.youtube > .inner {
-		article {
-			> .pic {
-				height: 150px;
-			}
-
-			> .txt {
-				width: 100%;
-				height: auto;
-
-				h2 {
-					font-size: 30px;
+		.youtubeList {
+			article {
+				> .pic {
+					height: 140px;
 				}
-				p {
-					font-size: 14px;
+
+				> .txt {
+					width: 100%;
+					height: auto;
+
+					h3 {
+						font-size: 30px;
+					}
+					p {
+						font-size: 14px;
+					}
 				}
 			}
 		}

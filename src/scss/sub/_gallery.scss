@@ -1,12 +1,150 @@
 .gallery {
 	.inner {
-		.gallery {
+		.campaign {
+			width: 100%;
 			margin-bottom: 100px;
-			min-height: 300px;
+
+			.wrap_campaign {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				align-items: center;
+
+				article {
+					width: 19%;
+					margin-bottom: 5%;
+					cursor: pointer;
+					padding-top: 20px;
+					position: relative;
+					transition: 0.5s;
+
+					span {
+						display: block;
+						font: bold 14px/1 'Smooch Sans';
+						color: #555;
+						letter-spacing: 1px;
+						margin-bottom: 5px;
+						position: relative;
+
+						&::after {
+							content: '';
+							display: block;
+							width: 50%;
+							height: 0.1px;
+							position: absolute;
+							top: 50%;
+							right: 0;
+							transform: translateY(-50%);
+							background: #222;
+						}
+					}
+					.pic {
+						width: 100%;
+						height: 300px;
+						overflow: hidden;
+						position: relative;
+
+						&::before {
+							content: '';
+							display: block;
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							background: rgba(0, 0, 0, 0.8);
+							opacity: 0;
+							z-index: 1;
+							transition: 0.3s;
+						}
+						&::after {
+							content: 'VIEW';
+							display: block;
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -50%);
+							font: 18px/1 'Smooch Sans';
+							color: #eee;
+							letter-spacing: 2px;
+							opacity: 0;
+							z-index: 2;
+							transition: 0.3s;
+						}
+
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+							transition: 0.5s;
+						}
+					}
+					h2 {
+						font: normal 18px/1.2 'Smooch Sans';
+						color: #222;
+						letter-spacing: 1px;
+						padding-top: 5px;
+					}
+					&:hover {
+						.pic {
+							&::before {
+								opacity: 0.5;
+							}
+							&::after {
+								opacity: 1;
+							}
+							img {
+								transform: scale(1.1);
+								filter: grayscale(1) blur(3px);
+							}
+						}
+					}
+				}
+			}
 		}
-		.collaboration {
+		.shop {
 			> div {
 				min-height: 300px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.gallery {
+		.inner {
+			.campaign {
+				.wrap_campaign {
+					article {
+						width: 49%;
+
+						span {
+							&::after {
+								width: 25vw;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.gallery {
+		.inner {
+			.campaign {
+				.wrap_campaign {
+					article {
+						width: 100%;
+
+						span {
+							&::after {
+								width: 45vw;
+							}
+						}
+					}
+				}
 			}
 		}
 	}
