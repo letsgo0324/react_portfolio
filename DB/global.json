@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "location": "ITALY",
+      "store": "FIORENCE - GUCCI CASELLINA, ARTLAB, GARDEN, GUCCI 9, MILAN - GUCCI HUB, ROME - GUCCIS DESIGN OFFICE",
+      "sub": "Italy is where the dream has its roots, thanks to the journey started in Florence in 1921.",
+      "description": "It is in this country that the many souls of Gucci coexist: the corporate offices, the industrial platform, the craftsmanship and innovation centres, and our stores, spaces where the brand’s narrative takes shape and becomes visible in our direct relationship with customers."
+    },
+    {
+      "location": "AMERICAS",
+      "store": "SOUTH AMERICA, NORTH AMERICA",
+      "sub": "Gucci has spread across 34 countries on the American continent, including 27 Houses in Latin America and 99 stores in North America, resulting in a community of about 2,600 Dream-makers. The brand opened its first store in New York back in 1953.",
+      "description": "North America is an important market and a testing ground for innovative projects. One of them is the Gucci Wooster, a space designed to maintain the atmosphere of a 155-year-old building that recreates the vibe of the Soho neighborhood of the 70s & 80s. The store elevates the customer experience through an immersive brand experience."
+    },
+    {
+      "location": "ASIA",
+      "store": "GREATER CHINA, JAPAN, KOREA, SOUTH ASIA AND PACIFIC",
+      "sub": "The bond between the Asian continent and Gucci started more than 40 years ago, when Gucci opened its first store in Tokyo, followed two years later by the second one in Hong Kong.",
+      "description": "Since that time, the brand’s presence in Asia has never stopped growing and enjoying a constant success that has led to Gucci owning 280 stores, employing around 7,000 Dream-makers. From Shanghai to Tokyo, Seoul to Singapore, Gucci is today spread over 14 Countries, blending talents with different skills, united by the same passion and beliefs."
+    },
+    {
+      "location": "EMEA",
+      "store": "CENTRAL EUROPE, NORTH EUROPE, SOUTH ECROPE, WESTERN EUROPE, MIDDLE EAST&AFRICA, RUSSIA",
+      "sub": "London was the city where Gucci took its first steps outside of its homeland, back in 1951. Since then, the journey has never stopped bringing us to the heart of Europe and expanding, city after city, all the way to Dubai.",
+      "description": "Russia and Middle East/Africa have joined this region too, taking the number of “Houses” to 126, enlivened by around 3,600 employees in 7 countries."
+    }
+  ]
+}
