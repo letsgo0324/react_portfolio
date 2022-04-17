@@ -1,12 +1,407 @@
 .community {
-	.inner {
-		.news {
-			margin-bottom: 100px;
-			min-height: 300px;
+	.event {
+		margin-top: 100px;
+		margin-bottom: 100px;
+
+		.inner {
+			width: 1180px;
+			margin: 0 auto;
+
+			h1 {
+				font: normal 32px/1 'Bebas Neue';
+				color: #222;
+				letter-spacing: 2px;
+				margin-bottom: 30px;
+			}
+
+			> .wrap {
+				article {
+					width: 25%;
+					float: left;
+
+					.pic {
+						width: 100%;
+						height: 400px;
+						background: #222;
+						overflow: hidden;
+
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+							filter: grayscale(1);
+							opacity: 0.5;
+							transition: 0.5s;
+						}
+
+						&:hover {
+							img {
+								filter: grayscale(0);
+								opacity: 1;
+								transform: scale(1.05);
+							}
+						}
+					}
+					> .txt_inner {
+						width: 100%;
+						padding: 20px 30px 20px 0;
+						display: flex;
+						flex-wrap: wrap;
+						justify-content: space-between;
+						align-items: flex-start;
+
+						.txt_left {
+							width: 20%;
+							height: 70px;
+							float: left;
+
+							h2 {
+								font: 60px/1 'Bebas Neue';
+								color: #222;
+								border-bottom: 3px solid #222;
+							}
+						}
+						.txt_right {
+							width: 70%;
+							height: 70px;
+							overflow: hidden;
+
+							h3 {
+								font: normal 14px/1.2 'Smooch Sans';
+								color: #666;
+							}
+						}
+						span {
+							display: block;
+							width: 100%;
+							text-align: right;
+							cursor: pointer;
+							font-size: 30px;
+							color: #222;
+							transition: 0.5s;
+
+							&:hover {
+								color: #6fd885;
+								transform: translateX(10px);
+							}
+						}
+					}
+				}
+			}
 		}
-		.collaboration {
-			> div {
-				min-height: 300px;
+	}
+	.news {
+		width: 100%;
+		margin-bottom: 100px;
+
+		.inner {
+			width: 1180px;
+			margin: 0 auto;
+
+			h1 {
+				font: normal 32px/1 'Bebas Neue';
+				color: #222;
+				letter-spacing: 2px;
+				margin-bottom: 30px;
+			}
+
+			.wrap {
+				.newsTxt {
+					width: 40%;
+					float: left;
+					padding-right: 90px;
+					display: block;
+					position: sticky;
+					top: 100px;
+
+					h2 {
+						font: normal 160px/0.8 'Smooch Sans';
+						color: #222;
+						margin-bottom: 20px;
+					}
+					b {
+						display: block;
+						font: 20px/1.2 'Smooch Sans';
+						color: #444;
+						margin-bottom: 10px;
+					}
+					p {
+						font: 14px/1.2 'Smooch Sans';
+						color: #444;
+					}
+				}
+
+				.box_inner {
+					width: 60%;
+					float: left;
+
+					.inputBox {
+						width: 100%;
+						padding-left: 30px;
+						margin-bottom: 100px;
+
+						h2 {
+							font: 28px/1 'Bebas Neue';
+							color: #6fd885;
+							padding-bottom: 10px;
+							margin-bottom: 20px;
+							border-bottom: 2px solid #6fd885;
+						}
+
+						h3 {
+							width: 100%;
+							font-weight: bold;
+							font-size: 16px;
+							font-family: 'Smooch Sans';
+							color: #6fd885;
+							letter-spacing: 1px;
+							margin-bottom: 5px;
+						}
+						> input {
+							width: 100%;
+							height: 40px;
+							padding: 5px;
+							border: none;
+							border-bottom: 1px solid #6fd885;
+							font: 14px/1.2 'Smooch Sans';
+							color: #666;
+							letter-spacing: 0.5px;
+							margin-bottom: 20px;
+						}
+						> textarea {
+							width: 100%;
+							height: 80px;
+							padding: 5px;
+							border: none;
+							border-bottom: 1px solid #6fd885;
+							resize: none;
+							font: 14px/1.2 'Smooch Sans';
+							color: #666;
+							letter-spacing: 0.5px;
+							margin-bottom: 20px;
+						}
+						> .btns {
+							width: 100%;
+
+							.wrap {
+								button {
+									display: block;
+									float: left;
+									width: 49%;
+									height: 40px;
+									margin-right: 2%;
+									background: #fff;
+									border: 1px solid #6fd885;
+									font: 14px/1 'Bebas Neue';
+									color: #6fd885;
+									letter-spacing: 2px;
+									cursor: pointer;
+
+									&:last-child {
+										margin-right: 0;
+									}
+								}
+							}
+						}
+					}
+					.showBox {
+						width: 100%;
+						padding-left: 30px;
+
+						h2 {
+							font: 28px/1 'Bebas Neue';
+							color: #6fd885;
+							padding-bottom: 10px;
+							margin-bottom: 20px;
+							border-bottom: 2px solid #6fd885;
+						}
+
+						article {
+							width: 100%;
+							margin-bottom: 50px;
+							position: relative;
+
+							.editBox {
+								.wrap {
+									border: 1px solid #bbb;
+									margin-bottom: 5px;
+
+									&:nth-of-type(1) h3 {
+										line-height: 40px;
+									}
+									&:nth-of-type(2) h3 {
+										line-height: 115px;
+									}
+
+									h3 {
+										width: 15%;
+										float: left;
+										font-weight: bold;
+										font-size: 16px;
+										font-family: 'Smooch Sans';
+										color: #bbb;
+										letter-spacing: 1px;
+										text-align: center;
+										border-right: 1px solid #bbb;
+									}
+									input {
+										width: 85%;
+										height: 40px;
+										padding: 5px 10px;
+										border: none;
+										font: 14px/1.2 'Smooch Sans';
+										color: #666;
+										letter-spacing: 0.5px;
+									}
+									textarea {
+										width: 85%;
+										height: 100px;
+										padding: 10px;
+										margin: 5px 0;
+										border: none;
+										resize: none;
+										font: 14px/1.2 'Smooch Sans';
+										color: #666;
+										letter-spacing: 0.5px;
+									}
+								}
+
+								> .btns {
+									width: 100%;
+									margin-top: 20px;
+
+									.wrap {
+										border: none;
+
+										button {
+											display: block;
+											float: right;
+											width: 100px;
+											height: 30px;
+											margin-left: 2%;
+											background: #fff;
+											border: 1px solid #bbb;
+											font: 12px/1 'Bebas Neue';
+											color: #bbb;
+											letter-spacing: 2px;
+											cursor: pointer;
+
+											&:last-child {
+												margin-right: 0;
+											}
+										}
+									}
+								}
+							}
+
+							.txtBox {
+								position: relative;
+
+								.txtBox_inner {
+									border: 1px solid #6fd885;
+									padding: 30px;
+
+									h3 {
+										font: bold 20px/1 'Smooch Sans';
+										color: #6fd885;
+										letter-spacing: 1px;
+										overflow: hidden;
+										border-bottom: 2px solid #6fd885;
+										margin-bottom: 20px;
+										padding-bottom: 20px;
+									}
+									p {
+										font: 16px/1 'Smooch Sans';
+										color: #6fd885;
+										letter-spacing: 1px;
+										overflow: hidden;
+									}
+								}
+
+								> .btns {
+									width: 100%;
+									margin-top: 10px;
+
+									.wrap {
+										border: none;
+
+										button {
+											display: block;
+											float: right;
+											width: 100px;
+											height: 30px;
+											margin-left: 2%;
+											background: #fff;
+											border: 1px solid #6fd885;
+											font: 12px/1 'Bebas Neue';
+											color: #6fd885;
+											letter-spacing: 2px;
+											cursor: pointer;
+
+											&:last-child {
+												margin-right: 0;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.community {
+		.event {
+			.inner {
+				width: 100%;
+				padding: 0 30px;
+
+				> .wrap {
+					article {
+						width: 50%;
+					}
+				}
+			}
+		}
+		.news {
+			.inner {
+				width: 100%;
+				padding: 0 30px;
+
+				.wrap {
+					.newsTxt {
+						display: none;
+					}
+
+					.box_inner {
+						width: 100%;
+
+						.inputBox {
+							padding-left: 0;
+						}
+						.showBox {
+							padding-left: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.community {
+		.event {
+			.inner {
+				> .wrap {
+					article {
+						width: 100%;
+					}
+				}
 			}
 		}
 	}

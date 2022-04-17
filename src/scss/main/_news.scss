@@ -11,6 +11,47 @@
 			color: #222;
 			letter-spacing: 2px;
 			margin-bottom: 50px;
+			position: relative;
+		}
+
+		.wrap {
+			article {
+				float: left;
+				width: 25%;
+				height: 300px;
+				border: 1px solid #ddd;
+				border-left: 1px solid transparent;
+				padding: 30px;
+				overflow: hidden;
+				transition: 0.5s;
+
+				&:first-child {
+					border-left: 1px solid #ddd;
+				}
+
+				h2 {
+					font: bold 26px/1 'Smooch Sans';
+					color: #222;
+					margin-bottom: 20px;
+				}
+				p {
+					font: 16px/1.2 'Smooch Sans';
+					color: #666;
+				}
+
+				&:hover {
+					background: #6fd885;
+					border: 1px solid #6fd885;
+					transform: scale(1.05);
+
+					h2 {
+						color: #eee;
+					}
+					p {
+						color: #eee;
+					}
+				}
+			}
 		}
 	}
 }

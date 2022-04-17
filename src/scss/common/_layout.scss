@@ -55,10 +55,9 @@
 		}
 	}
 
-	> .inner {
-		width: 1180px;
+	> .trans {
+		width: 100%;
 		min-height: 500px;
-		margin: 100px auto;
 		position: relative;
 		transform: translateY(100px);
 		opacity: 0;
@@ -73,7 +72,7 @@
 	}
 
 	&.on {
-		> .inner {
+		> .trans {
 			transform: translateY(0);
 			opacity: 1;
 		}
@@ -91,10 +90,6 @@
 					font-size: 70px;
 				}
 			}
-		}
-		> .inner {
-			width: 100%;
-			padding: 0 30px;
 		}
 	}
 }
@@ -118,10 +113,6 @@
 			> .pic {
 				display: none;
 			}
-		}
-		> .inner {
-			width: 100%;
-			padding: 0 30px;
 		}
 	}
 }

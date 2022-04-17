@@ -1,8 +1,18 @@
 .join {
-	.inner {
-		.privacy {
-			margin-bottom: 100px;
+	.privacy {
+		margin-top: 100px;
+		margin-bottom: 150px;
 
+		.inner {
+			width: 1180px;
+			margin: 0 auto;
+
+			h1 {
+				font: normal 32px/1 'Bebas Neue';
+				color: #222;
+				letter-spacing: 2px;
+				margin-bottom: 30px;
+			}
 			.wrap {
 				article {
 					width: 280px;
@@ -63,9 +73,81 @@
 				}
 			}
 		}
-		.account {
-			width: 100%;
 
+		.wrap {
+			article {
+				width: 280px;
+				height: 380px;
+				float: left;
+				margin-right: 20px;
+				background: #fff;
+				border-top: 3px solid #222;
+				padding: 30px;
+				position: relative;
+				transition: 0.5s;
+
+				&:nth-of-type(4) {
+					margin-right: 0;
+				}
+
+				h2 {
+					font: bold 24px/1 'Smooch Sans';
+					color: #222;
+					letter-spacing: 1px;
+					margin-bottom: 20px;
+				}
+				p {
+					font: 18px/1.5 'Smooch Sans';
+					color: #222;
+				}
+				span {
+					position: absolute;
+					bottom: 30px;
+					left: 30px;
+					width: 30px;
+					height: 30px;
+					border-radius: 50%;
+					background: #6fd885;
+					font-size: 20px;
+					line-height: 30px;
+					color: #222;
+					text-align: center;
+					display: none;
+					cursor: pointer;
+				}
+
+				&:hover {
+					background: #222;
+					box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+					transform: translate(-5px, -5px);
+
+					h2 {
+						color: #eee;
+					}
+					p {
+						color: #eee;
+					}
+					span {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+	.account {
+		width: 100%;
+		margin-bottom: 100px;
+
+		.inner {
+			width: 1180px;
+			margin: 0 auto;
+
+			h1 {
+				font: normal 32px/1 'Bebas Neue';
+				color: #222;
+				letter-spacing: 2px;
+				margin-bottom: 30px;
+			}
 			.wrap {
 				border: 1px solid #6fd885;
 				.pic {
@@ -252,8 +334,11 @@
 
 @media screen and (max-width: $tablet) {
 	.join {
-		.inner {
-			.privacy {
+		.privacy {
+			.inner {
+				width: 100%;
+				padding: 0 30px;
+
 				.wrap {
 					article {
 						width: 49%;
@@ -265,7 +350,11 @@
 					}
 				}
 			}
-			.account {
+		}
+		.account {
+			.inner {
+				width: 100%;
+				padding: 0 30px;
 				.wrap {
 					.pic {
 						width: 100%;
@@ -316,8 +405,8 @@
 
 @media screen and (max-width: $mobile) {
 	.join {
-		.inner {
-			.privacy {
+		.privacy {
+			.inner {
 				.wrap {
 					article {
 						width: 100%;
@@ -325,7 +414,9 @@
 					}
 				}
 			}
-			.account {
+		}
+		.account {
+			.inner {
 				.wrap {
 					.pic {
 						.successTxt {

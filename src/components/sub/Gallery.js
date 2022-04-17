@@ -31,31 +31,36 @@ function Gallery() {
 				subName2={'Shop'}
 				subVisual={'figure3'}>
 				<div className='campaign'>
-					<div className='wrap_campaign'>
-						{items.map((item, idx) => {
-							return (
-								<article
-									key={idx}
-									onClick={() => {
-										setOpen(true);
-										setIndex(idx);
-									}}>
-									<span>GUCCI CAMPAIGN</span>
-									<div className='pic'>
-										<img
-											src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}
-										/>
-									</div>
-									<h2>{item.title}</h2>
-								</article>
-							);
-						})}
+					<div className='inner'>
+						<h1>CAMPAIGN</h1>
+						<div className='wrap_campaign'>
+							{items.map((item, idx) => {
+								return (
+									<article
+										key={idx}
+										onClick={() => {
+											setOpen(true);
+											setIndex(idx);
+										}}>
+										<span>GUCCI CAMPAIGN</span>
+										<div className='pic'>
+											<img
+												src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}
+											/>
+										</div>
+										<h2>{item.title}</h2>
+									</article>
+								);
+							})}
+						</div>
 					</div>
 				</div>
 
 				<div className='shop'>
-					<h1>SHOP</h1>
-					<div></div>
+					<div className='inner'>
+						<h1>SHOP</h1>
+						<div></div>
+					</div>
 				</div>
 			</Layout>
 

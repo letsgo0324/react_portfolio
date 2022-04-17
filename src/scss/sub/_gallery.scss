@@ -1,8 +1,19 @@
 .gallery {
-	.inner {
-		.campaign {
-			width: 100%;
-			margin-bottom: 100px;
+	.campaign {
+		width: 100%;
+		margin-top: 100px;
+		margin-bottom: 100px;
+
+		.inner {
+			width: 1180px;
+			margin: 0 auto;
+
+			h1 {
+				font: normal 32px/1 'Bebas Neue';
+				color: #222;
+				letter-spacing: 2px;
+				margin-bottom: 30px;
+			}
 
 			.wrap_campaign {
 				display: flex;
@@ -102,7 +113,18 @@
 				}
 			}
 		}
-		.shop {
+	}
+	.shop {
+		.inner {
+			width: 1180px;
+			margin: 0 auto;
+
+			h1 {
+				font: normal 32px/1 'Bebas Neue';
+				color: #222;
+				letter-spacing: 2px;
+				margin-bottom: 30px;
+			}
 			> div {
 				min-height: 300px;
 			}
@@ -112,8 +134,11 @@
 
 @media screen and (max-width: $tablet) {
 	.gallery {
-		.inner {
-			.campaign {
+		.campaign {
+			.inner {
+				width: 100%;
+				padding: 0 30px;
+
 				.wrap_campaign {
 					article {
 						width: 49%;
@@ -127,13 +152,19 @@
 				}
 			}
 		}
+		.shop {
+			.inner {
+				width: 100%;
+				padding: 0 30px;
+			}
+		}
 	}
 }
 
 @media screen and (max-width: $mobile) {
 	.gallery {
-		.inner {
-			.campaign {
+		.campaign {
+			.inner {
 				.wrap_campaign {
 					article {
 						width: 100%;

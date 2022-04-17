@@ -1,7 +1,18 @@
 .about {
-	.inner {
-		.memberList {
-			margin-bottom: 100px;
+	.memberList {
+		margin-top: 100px;
+		margin-bottom: 100px;
+
+		.inner {
+			width: 1180px;
+			margin: 0 auto;
+
+			h1 {
+				font: normal 32px/1 'Bebas Neue';
+				color: #222;
+				letter-spacing: 2px;
+				margin-bottom: 30px;
+			}
 
 			.wrap {
 				article {
@@ -123,10 +134,85 @@
 				}
 			}
 		}
+	}
 
-		.history {
-			> div {
-				min-height: 300px;
+	.global {
+		margin-bottom: 100px;
+
+		.inner {
+			width: 1180px;
+			margin: 0 auto;
+
+			h1 {
+				font: normal 32px/1 'Bebas Neue';
+				color: #222;
+				letter-spacing: 2px;
+				margin-bottom: 30px;
+			}
+
+			> .wrap {
+				article {
+					width: 100%;
+					float: left;
+					cursor: pointer;
+
+					&:hover {
+						background: #f8f8f8;
+					}
+
+					> .wrap {
+						h2 {
+							width: 300px;
+							float: left;
+							padding: 40px 0;
+							font: 70px/1 'Bebas Neue';
+							color: #6fd885;
+							letter-spacing: 3px;
+						}
+						> .txt {
+							width: 880px;
+							float: left;
+							padding: 40px 0 40px 40px;
+							border-left: 2px solid rgba(111, 216, 134, 0.3);
+
+							span {
+								display: block;
+								font: 14px/1 'Smooch Sans';
+								color: #6fd885;
+								margin-bottom: 5px;
+								position: relative;
+
+								&::before {
+									content: '';
+									display: block;
+									position: absolute;
+									top: 5px;
+									left: -46px;
+									width: 10px;
+									height: 10px;
+									border-radius: 50%;
+									background: #6fd885;
+								}
+							}
+							h3 {
+								font: bold 18px/1.2 'Smooch Sans';
+								color: #6fd885;
+								margin-bottom: 30px;
+							}
+
+							h4 {
+								font: bold 22px/1.2 'Smooch Sans';
+								color: #222;
+								margin-bottom: 10px;
+								position: relative;
+							}
+							p {
+								font: 16px/1.2 'Smooch Sans';
+								color: #666;
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -134,8 +220,11 @@
 
 @media screen and (max-width: $tablet) {
 	.about {
-		.inner {
-			.memberList {
+		.memberList {
+			.inner {
+				width: 100%;
+				padding: 0 30px;
+
 				.wrap {
 					article {
 						width: 49%;
@@ -143,6 +232,40 @@
 
 						&:nth-of-type(2n) {
 							margin-right: 0;
+						}
+						.pic {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+		.global {
+			.inner {
+				width: 100%;
+				padding: 0 30px;
+
+				> .wrap {
+					article {
+						> .wrap {
+							border-left: 2px solid rgba(111, 216, 134, 0.3);
+
+							h2 {
+								width: 100%;
+								padding: 40px 20px;
+								font-size: 60px;
+							}
+							> .txt {
+								width: 100%;
+								padding: 0 20px 40px 20px;
+								border-left: none;
+
+								span {
+									&::before {
+										left: -26px;
+									}
+								}
+							}
 						}
 					}
 				}
@@ -153,8 +276,8 @@
 
 @media screen and (max-width: $mobile) {
 	.about {
-		.inner {
-			.memberList {
+		.memberList {
+			.inner {
 				.wrap {
 					article {
 						width: 100%;
