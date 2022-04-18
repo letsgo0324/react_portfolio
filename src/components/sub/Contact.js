@@ -150,62 +150,58 @@ function Contact() {
 			subName2={'FAQs'}
 			subVisual={'figure5'}>
 			<div className='location'>
-				<div className='inner'>
-					<h1>LOCATION</h1>
-					<div className='location_wrap'>
-						<ul className='map_contact' ref={branch}>
+				<h1>LOCATION</h1>
+				<div className='location_wrap'>
+					<ul className='map_contact' ref={branch}>
+						{mapInfo.map((info, idx) => {
+							return (
+								<li className='txt' key={idx}>
+									<h2>{info.name}</h2>
+									<span>{info.title}</span>
+									<h3>ADDRESS</h3>
+									<p>{info.address}</p>
+									<h3>TEL</h3>
+									<p>{info.call}</p>
+									<h3>TIME</h3>
+									<p>{info.time}</p>
+									<h3>CATEGORY</h3>
+									<p>{info.category}</p>
+								</li>
+							);
+						})}
+					</ul>
+					<div className='map_wrap'>
+						<ul className='branch' ref={branch}>
 							{mapInfo.map((info, idx) => {
 								return (
-									<li className='txt' key={idx}>
-										<h2>{info.name}</h2>
-										<span>{info.title}</span>
-										<h3>ADDRESS</h3>
-										<p>{info.address}</p>
-										<h3>TEL</h3>
-										<p>{info.call}</p>
-										<h3>TIME</h3>
-										<p>{info.time}</p>
-										<h3>CATEGORY</h3>
-										<p>{info.category}</p>
+									<li
+										key={idx}
+										onClick={() => {
+											setIndex(idx);
+										}}>
+										{info.title}
 									</li>
 								);
 							})}
 						</ul>
-						<div className='map_wrap'>
-							<ul className='branch' ref={branch}>
-								{mapInfo.map((info, idx) => {
-									return (
-										<li
-											key={idx}
-											onClick={() => {
-												setIndex(idx);
-											}}>
-											{info.title}
-										</li>
-									);
-								})}
-							</ul>
-							<div id='map' ref={container}></div>
-						</div>
+						<div id='map' ref={container}></div>
 					</div>
 				</div>
 			</div>
 			<div className='faqs'>
-				<div className='inner'>
-					<h1>FAQs</h1>
-					<div className='wrap'>
-						{faqCon.map((con, idx) => {
-							return (
-								<article>
-									<h2>{con.category}</h2>
-									<span>{con.month}</span>
-									<span>{con.date}</span>
-									<h3>{con.title}</h3>
-									<p>{con.description}</p>
-								</article>
-							);
-						})}
-					</div>
+				<h1>FAQs</h1>
+				<div className='wrap'>
+					{faqCon.map((con, idx) => {
+						return (
+							<article>
+								<h2>{con.category}</h2>
+								<span>{con.month}</span>
+								<span>{con.date}</span>
+								<h3>{con.title}</h3>
+								<p>{con.description}</p>
+							</article>
+						);
+					})}
 				</div>
 			</div>
 		</Layout>

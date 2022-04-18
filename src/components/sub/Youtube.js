@@ -43,73 +43,65 @@ function Youtube() {
 				subVisual={'figure4'}>
 				<div className='video'>
 					<div className='videoList'>
-						<div className='inner'>
-							<h1>VIDEO</h1>
-							<div className='wrap'>
-								{items2.map((item, idx) => {
-									const tit = item.snippet.title;
-									const desc = item.snippet.description;
-									const date = item.snippet.publishedAt;
-									const clickBtn = () => {
-										setOpen2(true);
-										setIndex2(idx);
-									};
+						<h1>VIDEO</h1>
+						<div className='wrap'>
+							{items2.map((item, idx) => {
+								const tit = item.snippet.title;
+								const desc = item.snippet.description;
+								const date = item.snippet.publishedAt;
+								const clickBtn = () => {
+									setOpen2(true);
+									setIndex2(idx);
+								};
 
-									return (
-										<article key={idx} onClick={clickBtn}>
-											<div className='txt'>
-												<h2>{idx + 1}</h2>
+								return (
+									<article key={idx} onClick={clickBtn}>
+										<div className='txt'>
+											<h2>{idx + 1}</h2>
 
-												<h3>
-													{tit.length > 30 ? tit.substr(0, 30) + '..' : tit}
-												</h3>
-												<p>
-													{desc.length > 100
-														? desc.substr(0, 100) + '..'
-														: desc}
-												</p>
-											</div>
-											<div className='pic'>
-												<img src={item.snippet.thumbnails.standard.url} />
-											</div>
-											<span>{date.split('T')[0]}</span>
-										</article>
-									);
-								})}
-							</div>
+											<h3>
+												{tit.length > 30 ? tit.substr(0, 30) + '..' : tit}
+											</h3>
+											<p>
+												{desc.length > 100 ? desc.substr(0, 100) + '..' : desc}
+											</p>
+										</div>
+										<div className='pic'>
+											<img src={item.snippet.thumbnails.standard.url} />
+										</div>
+										<span>{date.split('T')[0]}</span>
+									</article>
+								);
+							})}
 						</div>
 					</div>
 				</div>
 				<div className='collaboList'>
-					<div className='inner'>
-						<h1>COLLABORATION</h1>
-						{items.map((item, idx) => {
-							const desc = item.snippet.description;
-							const date = item.snippet.publishedAt;
-							const clickBtn = () => {
-								setOpen(true);
-								setIndex(idx);
-							};
+					<h1>COLLABORATION</h1>
+					{items.map((item, idx) => {
+						const desc = item.snippet.description;
+						const date = item.snippet.publishedAt;
+						const clickBtn = () => {
+							setOpen(true);
+							setIndex(idx);
+						};
 
-							return (
-								<article key={idx}>
-									<div className='pic' onClick={clickBtn}>
-										<img src={item.snippet.thumbnails.standard.url} />
-									</div>
-									<div className='txt'>
-										<h2>{date.split('T')[0]}</h2>
-										<h3>{item.snippet.title}</h3>
-										<p>
-											{desc.length > 200 ? desc.substr(0, 200) + '..' : desc}
-										</p>
-										<span className='view' onClick={clickBtn}>
-											VIEW MORE
-										</span>
-									</div>
-								</article>
-							);
-						})}
-					</div>
+						return (
+							<article key={idx}>
+								<div className='pic' onClick={clickBtn}>
+									<img src={item.snippet.thumbnails.standard.url} />
+								</div>
+								<div className='txt'>
+									<h2>{date.split('T')[0]}</h2>
+									<h3>{item.snippet.title}</h3>
+									<p>{desc.length > 200 ? desc.substr(0, 200) + '..' : desc}</p>
+									<span className='view' onClick={clickBtn}>
+										VIEW MORE
+									</span>
+								</div>
+							</article>
+						);
+					})}
 				</div>
 			</Layout>
 

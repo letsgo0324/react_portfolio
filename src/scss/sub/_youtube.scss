@@ -1,15 +1,26 @@
 .youtube {
-	.video {
-		width: 100%;
-		background: #222;
-		padding: 100px 0;
-		margin-bottom: 150px;
+	.inner {
+		.video {
+			width: 100%;
+			background: #222;
+			padding: 100px 0;
+			margin-bottom: 150px;
+			position: relative;
 
-		.videoList {
-			.inner {
-				width: 1180px;
-				margin: 0 auto;
+			&::before {
+				content: '';
+				display: block;
+				width: 100vw;
+				height: 100%;
+				background: #222;
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				z-index: -1;
+			}
 
+			.videoList {
 				h1 {
 					font: normal 32px/1 'Bebas Neue';
 					color: #eee;
@@ -120,13 +131,8 @@
 				}
 			}
 		}
-	}
-	.collaboList {
-		margin-bottom: 100px;
-
-		.inner {
-			width: 1180px;
-			margin: 0 auto;
+		.collaboList {
+			margin-bottom: 100px;
 
 			h1 {
 				font: normal 32px/1 'Bebas Neue';
@@ -313,62 +319,52 @@
 }
 
 @media screen and (max-width: $tablet) {
-	.youtube {
+	.youtube > .inner {
 		.video {
 			.videoList {
-				.inner {
-					width: 100%;
-					padding: 0 30px;
+				.wrap {
+					article {
+						width: 49%;
+						margin-right: 2%;
+						margin-bottom: 20px;
 
-					.wrap {
-						article {
-							width: 49%;
-							margin-right: 2%;
-							margin-bottom: 20px;
-
-							&:nth-of-type(2n) {
-								margin-right: 0;
-							}
+						&:nth-of-type(2n) {
+							margin-right: 0;
 						}
 					}
 				}
 			}
 		}
 		.collaboList {
-			.inner {
-				width: 100%;
-				padding: 0 30px;
+			article {
+				height: auto;
+				display: block;
 
-				article {
+				> .pic {
+					width: 100%;
+					height: 260px;
+					margin-bottom: 30px;
+				}
+
+				> .txt {
+					width: 100%;
 					height: auto;
-					display: block;
 
+					h3 {
+						font-size: 40px;
+						margin-bottom: 60px;
+					}
+					p {
+						position: relative;
+					}
+				}
+
+				&:nth-of-type(2n) {
 					> .pic {
-						width: 100%;
-						height: 260px;
-						margin-bottom: 30px;
+						position: relative;
 					}
-
 					> .txt {
-						width: 100%;
-						height: auto;
-
-						h3 {
-							font-size: 40px;
-							margin-bottom: 60px;
-						}
-						p {
-							position: relative;
-						}
-					}
-
-					&:nth-of-type(2n) {
-						> .pic {
-							position: relative;
-						}
-						> .txt {
-							position: relative;
-						}
+						position: relative;
 					}
 				}
 			}
@@ -377,36 +373,32 @@
 }
 
 @media screen and (max-width: $mobile) {
-	.youtube {
+	.youtube > .inner {
 		.video {
 			.videoList {
-				.inner {
-					.wrap {
-						article {
-							width: 100%;
-							margin-right: 0;
-						}
+				.wrap {
+					article {
+						width: 100%;
+						margin-right: 0;
 					}
 				}
 			}
 		}
 		.collaboList {
-			.inner {
-				article {
-					> .pic {
-						height: 140px;
+			article {
+				> .pic {
+					height: 140px;
+				}
+
+				> .txt {
+					width: 100%;
+					height: auto;
+
+					h3 {
+						font-size: 30px;
 					}
-
-					> .txt {
-						width: 100%;
-						height: auto;
-
-						h3 {
-							font-size: 30px;
-						}
-						p {
-							font-size: 14px;
-						}
+					p {
+						font-size: 14px;
 					}
 				}
 			}

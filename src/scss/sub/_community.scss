@@ -1,11 +1,8 @@
 .community {
-	.event {
-		margin-top: 100px;
-		margin-bottom: 100px;
-
-		.inner {
-			width: 1180px;
-			margin: 0 auto;
+	.inner {
+		.event {
+			margin-top: 100px;
+			margin-bottom: 100px;
 
 			h1 {
 				font: normal 32px/1 'Bebas Neue';
@@ -89,14 +86,9 @@
 				}
 			}
 		}
-	}
-	.news {
-		width: 100%;
-		margin-bottom: 100px;
-
-		.inner {
-			width: 1180px;
-			margin: 0 auto;
+		.news {
+			width: 100%;
+			margin-bottom: 100px;
 
 			h1 {
 				font: normal 32px/1 'Bebas Neue';
@@ -354,38 +346,28 @@
 }
 
 @media screen and (max-width: $tablet) {
-	.community {
+	.community > .inner {
 		.event {
-			.inner {
-				width: 100%;
-				padding: 0 30px;
-
-				> .wrap {
-					article {
-						width: 50%;
-					}
+			> .wrap {
+				article {
+					width: 50%;
 				}
 			}
 		}
 		.news {
-			.inner {
-				width: 100%;
-				padding: 0 30px;
+			.wrap {
+				.newsTxt {
+					display: none;
+				}
 
-				.wrap {
-					.newsTxt {
-						display: none;
+				.box_inner {
+					width: 100%;
+
+					.inputBox {
+						padding-left: 0;
 					}
-
-					.box_inner {
-						width: 100%;
-
-						.inputBox {
-							padding-left: 0;
-						}
-						.showBox {
-							padding-left: 0;
-						}
+					.showBox {
+						padding-left: 0;
 					}
 				}
 			}
@@ -394,13 +376,11 @@
 }
 
 @media screen and (max-width: $mobile) {
-	.community {
+	.community > .inner {
 		.event {
-			.inner {
-				> .wrap {
-					article {
-						width: 100%;
-					}
+			> .wrap {
+				article {
+					width: 100%;
 				}
 			}
 		}

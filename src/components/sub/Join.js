@@ -118,289 +118,282 @@ function Join() {
 			subName2={'Account'}
 			subVisual={'figure6'}>
 			<div className='privacy'>
-				<div className='inner'>
-					<h1>PRiVACY</h1>
-					<div className='wrap'>
-						<article>
-							<h2>TERMS</h2>
-							<p>
-								Updated to September 2021. Welcome to vault.gucci.com website
-								(hereinafter the “Website”).Use of the Website and of the
-								Services implies the full acceptance of these Terms of Use and
-								all guidelines and rules.
-							</p>
-							<span>
-								<FontAwesomeIcon icon={faAngleRight} />
-							</span>
-						</article>
-						<article>
-							<h2>CONDITIONS</h2>
-							<p>
-								This Website may contain links to other websites. Gucci has no
-								control over such websites and will not be responsible or liable
-								for any accessibility of third-party websites or for their
-								content.
-							</p>
-							<span>
-								<FontAwesomeIcon icon={faAngleRight} />
-							</span>
-						</article>
-						<article>
-							<h2>PRIVACY</h2>
-							<p>
-								This privacy policy covers situations where we, Gucci, access,
-								collect, store process, use, disclose or transfer your personal
-								information in paper or electronic form. It also covers
-								situations.
-							</p>
-							<span>
-								<FontAwesomeIcon icon={faAngleRight} />
-							</span>
-						</article>
-						<article>
-							<h2>COOKIE POLICY</h2>
-							<p>
-								We, Gucci, act as the “data controller”, which means that we
-								determine “why” and “how” your personal information is collected
-								and used. We are a Italian corporation.
-							</p>
-							<span>
-								<FontAwesomeIcon icon={faAngleRight} />
-							</span>
-						</article>
-					</div>
+				<h1>PRiVACY</h1>
+				<div className='wrap'>
+					<article>
+						<h2>TERMS</h2>
+						<p>
+							Updated to September 2021. Welcome to vault.gucci.com website
+							(hereinafter the “Website”).Use of the Website and of the Services
+							implies the full acceptance of these Terms of Use and all
+							guidelines and rules.
+						</p>
+						<span>
+							<FontAwesomeIcon icon={faAngleRight} />
+						</span>
+					</article>
+					<article>
+						<h2>CONDITIONS</h2>
+						<p>
+							This Website may contain links to other websites. Gucci has no
+							control over such websites and will not be responsible or liable
+							for any accessibility of third-party websites or for their
+							content.
+						</p>
+						<span>
+							<FontAwesomeIcon icon={faAngleRight} />
+						</span>
+					</article>
+					<article>
+						<h2>PRIVACY</h2>
+						<p>
+							This privacy policy covers situations where we, Gucci, access,
+							collect, store process, use, disclose or transfer your personal
+							information in paper or electronic form. It also covers
+							situations.
+						</p>
+						<span>
+							<FontAwesomeIcon icon={faAngleRight} />
+						</span>
+					</article>
+					<article>
+						<h2>COOKIE POLICY</h2>
+						<p>
+							We, Gucci, act as the “data controller”, which means that we
+							determine “why” and “how” your personal information is collected
+							and used. We are a Italian corporation.
+						</p>
+						<span>
+							<FontAwesomeIcon icon={faAngleRight} />
+						</span>
+					</article>
 				</div>
 			</div>
 
 			<div className='account'>
-				<div className='inner'>
-					<h1>ACCOUNT</h1>
-					<div className='wrap'>
-						<div className='pic'>
-							{success ? (
-								<div className='successTxt'>
-									<h3>THANK YOU FOR JOIN US</h3>
-									<img src={`${path}/img/join_img2.jpg`} />
-								</div>
-							) : null}
-							<img src={`${path}/img/join_img1.jpg`} />
-						</div>
-						<div className='form_wrap'>
-							<h2>CREATE ACCOUNT</h2>
-							<form onSubmit={handleSubmit}>
-								<fieldset>
-									<legend className='hidden'>CREATE ACCOUNT FORM</legend>
-									<table>
-										<caption className='hidden'>
-											CREATE ACCOUNT FORM TABLE
-										</caption>
-										<tbody>
-											<tr>
-												<th>
-													<label htmlFor='userid'>USER ID</label>
-												</th>
-												<td>
+				<h1>ACCOUNT</h1>
+				<div className='wrap'>
+					<div className='pic'>
+						{success ? (
+							<div className='successTxt'>
+								<h3>THANK YOU FOR JOIN US</h3>
+								<img src={`${path}/img/join_img2.jpg`} />
+							</div>
+						) : null}
+						<img src={`${path}/img/join_img1.jpg`} />
+					</div>
+					<div className='form_wrap'>
+						<h2>CREATE ACCOUNT</h2>
+						<form onSubmit={handleSubmit}>
+							<fieldset>
+								<legend className='hidden'>CREATE ACCOUNT FORM</legend>
+								<table>
+									<caption className='hidden'>
+										CREATE ACCOUNT FORM TABLE
+									</caption>
+									<tbody>
+										<tr>
+											<th>
+												<label htmlFor='userid'>USER ID</label>
+											</th>
+											<td>
+												<input
+													type='text'
+													name='userid'
+													id='userid'
+													placeholder='ID'
+													value={val.userid}
+													onChange={handleChange}
+												/>
+												<span className='err'>{err.userid}</span>
+											</td>
+										</tr>
+										<tr>
+											<th>
+												<label htmlFor='pwd1'>PASSWORD</label>
+											</th>
+											<td>
+												<input
+													type='password'
+													name='pwd1'
+													id='pwd1'
+													placeholder='Password'
+													value={val.pwd1}
+													onChange={handleChange}
+												/>
+												<span className='err'>{err.pwd1}</span>
+											</td>
+										</tr>
+										<tr>
+											<th>
+												<label htmlFor='pwd2'>RE-PASSWORD</label>
+											</th>
+											<td>
+												<input
+													type='password'
+													name='pwd2'
+													id='pwd2'
+													placeholder='Re-Password'
+													value={val.pwd2}
+													onChange={handleChange}
+												/>
+												<span className='err'>{err.pwd2}</span>
+											</td>
+										</tr>
+										<tr>
+											<th>
+												<label htmlFor='email'>E-MAIL</label>
+											</th>
+											<td>
+												<input
+													type='text'
+													name='email'
+													id='email'
+													placeholder='E-Mail'
+													value={val.email}
+													onChange={handleChange}
+												/>
+												<span className='err'>{err.email}</span>
+											</td>
+										</tr>
+										<tr>
+											<th>GENDER</th>
+											<td>
+												<label htmlFor='male'>
 													<input
-														type='text'
-														name='userid'
-														id='userid'
-														placeholder='ID'
-														value={val.userid}
-														onChange={handleChange}
+														type='radio'
+														name='gender'
+														id='male'
+														onChange={handleRadio}
 													/>
-													<span className='err'>{err.userid}</span>
-												</td>
-											</tr>
-											<tr>
-												<th>
-													<label htmlFor='pwd1'>PASSWORD</label>
-												</th>
-												<td>
+													MALE
+												</label>
+												<label htmlFor='female'>
 													<input
-														type='password'
-														name='pwd1'
-														id='pwd1'
-														placeholder='Password'
-														value={val.pwd1}
-														onChange={handleChange}
+														type='radio'
+														name='gender'
+														id='female'
+														onChange={handleRadio}
 													/>
-													<span className='err'>{err.pwd1}</span>
-												</td>
-											</tr>
-											<tr>
-												<th>
-													<label htmlFor='pwd2'>RE-PASSWORD</label>
-												</th>
-												<td>
+													FEMALE
+												</label>
+												<span className='err'>{err.gender}</span>
+											</td>
+										</tr>
+										<tr>
+											<th>INTERESTS</th>
+											<td>
+												<label htmlFor='clothes'>
 													<input
-														type='password'
-														name='pwd2'
-														id='pwd2'
-														placeholder='Re-Password'
-														value={val.pwd2}
-														onChange={handleChange}
+														type='checkbox'
+														name='interests'
+														id='clothes'
+														onChange={handleCheck}
 													/>
-													<span className='err'>{err.pwd2}</span>
-												</td>
-											</tr>
-											<tr>
-												<th>
-													<label htmlFor='email'>E-MAIL</label>
-												</th>
-												<td>
+													CLOTHES
+												</label>
+												<label htmlFor='bag'>
 													<input
-														type='text'
-														name='email'
-														id='email'
-														placeholder='E-Mail'
-														value={val.email}
-														onChange={handleChange}
+														type='checkbox'
+														name='interests'
+														id='bag'
+														onChange={handleCheck}
 													/>
-													<span className='err'>{err.email}</span>
-												</td>
-											</tr>
-											<tr>
-												<th>GENDER</th>
-												<td>
-													<label htmlFor='male'>
-														<input
-															type='radio'
-															name='gender'
-															id='male'
-															onChange={handleRadio}
-														/>
-														MALE
-													</label>
-													<label htmlFor='female'>
-														<input
-															type='radio'
-															name='gender'
-															id='female'
-															onChange={handleRadio}
-														/>
-														FEMALE
-													</label>
-													<span className='err'>{err.gender}</span>
-												</td>
-											</tr>
-											<tr>
-												<th>INTERESTS</th>
-												<td>
-													<label htmlFor='clothes'>
-														<input
-															type='checkbox'
-															name='interests'
-															id='clothes'
-															onChange={handleCheck}
-														/>
-														CLOTHES
-													</label>
-													<label htmlFor='bag'>
-														<input
-															type='checkbox'
-															name='interests'
-															id='bag'
-															onChange={handleCheck}
-														/>
-														BAG
-													</label>
-													<label htmlFor='jewelry'>
-														<input
-															type='checkbox'
-															name='interests'
-															id='jewelry'
-															onChange={handleCheck}
-														/>
-														JEWELRY
-													</label>
-													<label htmlFor='shoes'>
-														<input
-															type='checkbox'
-															name='interests'
-															id='shoes'
-															onChange={handleCheck}
-														/>
-														SHOES
-													</label>
-													<label htmlFor='beauty'>
-														<input
-															type='checkbox'
-															name='interests'
-															id='beauty'
-															onChange={handleCheck}
-														/>
-														BEAUTY
-													</label>
-													<label htmlFor='deco'>
-														<input
-															type='checkbox'
-															name='interests'
-															id='deco'
-															onChange={handleCheck}
-														/>
-														DECO
-													</label>
-													<span className='err'>{err.interests}</span>
-												</td>
-											</tr>
-											<tr>
-												<th>
-													<label htmlFor='route'>JOIN ROUTE</label>
-												</th>
-												<td>
-													<select
-														name='route'
-														id='route'
-														onChange={handleSelect}>
-														<option value=''>Choose One</option>
-														<option value='routeSearch'>SEARCH</option>
-														<option value='routeSns'>SNS</option>
-														<option value='routeTv'>TV</option>
-														<option value='routeFriend'>FRIEDN</option>
-														<option value='routeStore'>STORE</option>
-														<option value='routeEtc'>ETC</option>
-													</select>
-													<span className='err'>{err.route}</span>
-												</td>
-											</tr>
-											<tr>
-												<th>
-													<label htmlFor='comments'>COMMENTS</label>
-												</th>
-												<td>
-													<textarea
-														name='comments'
-														id='comments'
-														cols='30'
-														rows='10'
-														spellCheck='false'
-														placeholder='Write Your Message'
-														value={val.comments}
-														onChange={handleChange}></textarea>
-													<span className='err'>{err.comments}</span>
-												</td>
-											</tr>
-											<tr>
-												<th colSpan='2'>
+													BAG
+												</label>
+												<label htmlFor='jewelry'>
 													<input
-														type='reset'
-														value='CANCEL'
-														onClick={handleReset}
+														type='checkbox'
+														name='interests'
+														id='jewelry'
+														onChange={handleCheck}
 													/>
+													JEWELRY
+												</label>
+												<label htmlFor='shoes'>
 													<input
-														type='submit'
-														value='SEND'
-														onClick={() => {
-															setIsSubmit(true);
-														}}
+														type='checkbox'
+														name='interests'
+														id='shoes'
+														onChange={handleCheck}
 													/>
-												</th>
-											</tr>
-										</tbody>
-									</table>
-								</fieldset>
-							</form>
-						</div>
+													SHOES
+												</label>
+												<label htmlFor='beauty'>
+													<input
+														type='checkbox'
+														name='interests'
+														id='beauty'
+														onChange={handleCheck}
+													/>
+													BEAUTY
+												</label>
+												<label htmlFor='deco'>
+													<input
+														type='checkbox'
+														name='interests'
+														id='deco'
+														onChange={handleCheck}
+													/>
+													DECO
+												</label>
+												<span className='err'>{err.interests}</span>
+											</td>
+										</tr>
+										<tr>
+											<th>
+												<label htmlFor='route'>JOIN ROUTE</label>
+											</th>
+											<td>
+												<select name='route' id='route' onChange={handleSelect}>
+													<option value=''>Choose One</option>
+													<option value='routeSearch'>SEARCH</option>
+													<option value='routeSns'>SNS</option>
+													<option value='routeTv'>TV</option>
+													<option value='routeFriend'>FRIEDN</option>
+													<option value='routeStore'>STORE</option>
+													<option value='routeEtc'>ETC</option>
+												</select>
+												<span className='err'>{err.route}</span>
+											</td>
+										</tr>
+										<tr>
+											<th>
+												<label htmlFor='comments'>COMMENTS</label>
+											</th>
+											<td>
+												<textarea
+													name='comments'
+													id='comments'
+													cols='30'
+													rows='10'
+													spellCheck='false'
+													placeholder='Write Your Message'
+													value={val.comments}
+													onChange={handleChange}></textarea>
+												<span className='err'>{err.comments}</span>
+											</td>
+										</tr>
+										<tr>
+											<th colSpan='2'>
+												<input
+													type='reset'
+													value='CANCEL'
+													onClick={handleReset}
+												/>
+												<input
+													type='submit'
+													value='SEND'
+													onClick={() => {
+														setIsSubmit(true);
+													}}
+												/>
+											</th>
+										</tr>
+									</tbody>
+								</table>
+							</fieldset>
+						</form>
 					</div>
 				</div>
 			</div>

@@ -21,7 +21,7 @@ function Layout(props) {
 					<img src={`${path}/img/${props.subVisual}.png`} />
 				</div>
 			</figure>
-			<div className='trans'>{props.children}</div>
+			<div className='inner'>{props.children}</div>
 		</section>
 	);
 }

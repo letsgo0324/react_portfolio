@@ -1,11 +1,8 @@
 .about {
-	.memberList {
-		margin-top: 100px;
-		margin-bottom: 100px;
-
-		.inner {
-			width: 1180px;
-			margin: 0 auto;
+	.inner {
+		.memberList {
+			margin-top: 100px;
+			margin-bottom: 100px;
 
 			h1 {
 				font: normal 32px/1 'Bebas Neue';
@@ -134,14 +131,8 @@
 				}
 			}
 		}
-	}
-
-	.global {
-		margin-bottom: 100px;
-
-		.inner {
-			width: 1180px;
-			margin: 0 auto;
+		.global {
+			margin-bottom: 100px;
 
 			h1 {
 				font: normal 32px/1 'Bebas Neue';
@@ -219,51 +210,41 @@
 }
 
 @media screen and (max-width: $tablet) {
-	.about {
+	.about > .inner {
 		.memberList {
-			.inner {
-				width: 100%;
-				padding: 0 30px;
+			.wrap {
+				article {
+					width: 49%;
+					margin-right: 2%;
 
-				.wrap {
-					article {
-						width: 49%;
-						margin-right: 2%;
-
-						&:nth-of-type(2n) {
-							margin-right: 0;
-						}
-						.pic {
-							width: 100%;
-						}
+					&:nth-of-type(2n) {
+						margin-right: 0;
+					}
+					.pic {
+						width: 100%;
 					}
 				}
 			}
 		}
 		.global {
-			.inner {
-				width: 100%;
-				padding: 0 30px;
+			> .wrap {
+				article {
+					> .wrap {
+						border-left: 2px solid rgba(111, 216, 134, 0.3);
 
-				> .wrap {
-					article {
-						> .wrap {
-							border-left: 2px solid rgba(111, 216, 134, 0.3);
+						h2 {
+							width: 100%;
+							padding: 40px 20px;
+							font-size: 60px;
+						}
+						> .txt {
+							width: 100%;
+							padding: 0 20px 40px 20px;
+							border-left: none;
 
-							h2 {
-								width: 100%;
-								padding: 40px 20px;
-								font-size: 60px;
-							}
-							> .txt {
-								width: 100%;
-								padding: 0 20px 40px 20px;
-								border-left: none;
-
-								span {
-									&::before {
-										left: -26px;
-									}
+							span {
+								&::before {
+									left: -26px;
 								}
 							}
 						}
@@ -275,14 +256,12 @@
 }
 
 @media screen and (max-width: $mobile) {
-	.about {
+	.about > .inner {
 		.memberList {
-			.inner {
-				.wrap {
-					article {
-						width: 100%;
-						margin-right: 0;
-					}
+			.wrap {
+				article {
+					width: 100%;
+					margin-right: 0;
 				}
 			}
 		}

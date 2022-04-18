@@ -1,11 +1,8 @@
 .join {
-	.privacy {
-		margin-top: 100px;
-		margin-bottom: 150px;
-
-		.inner {
-			width: 1180px;
-			margin: 0 auto;
+	.inner {
+		.privacy {
+			margin-top: 100px;
+			margin-bottom: 150px;
 
 			h1 {
 				font: normal 32px/1 'Bebas Neue';
@@ -72,75 +69,70 @@
 					}
 				}
 			}
-		}
 
-		.wrap {
-			article {
-				width: 280px;
-				height: 380px;
-				float: left;
-				margin-right: 20px;
-				background: #fff;
-				border-top: 3px solid #222;
-				padding: 30px;
-				position: relative;
-				transition: 0.5s;
+			.wrap {
+				article {
+					width: 280px;
+					height: 380px;
+					float: left;
+					margin-right: 20px;
+					background: #fff;
+					border-top: 3px solid #222;
+					padding: 30px;
+					position: relative;
+					transition: 0.5s;
 
-				&:nth-of-type(4) {
-					margin-right: 0;
-				}
-
-				h2 {
-					font: bold 24px/1 'Smooch Sans';
-					color: #222;
-					letter-spacing: 1px;
-					margin-bottom: 20px;
-				}
-				p {
-					font: 18px/1.5 'Smooch Sans';
-					color: #222;
-				}
-				span {
-					position: absolute;
-					bottom: 30px;
-					left: 30px;
-					width: 30px;
-					height: 30px;
-					border-radius: 50%;
-					background: #6fd885;
-					font-size: 20px;
-					line-height: 30px;
-					color: #222;
-					text-align: center;
-					display: none;
-					cursor: pointer;
-				}
-
-				&:hover {
-					background: #222;
-					box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-					transform: translate(-5px, -5px);
+					&:nth-of-type(4) {
+						margin-right: 0;
+					}
 
 					h2 {
-						color: #eee;
+						font: bold 24px/1 'Smooch Sans';
+						color: #222;
+						letter-spacing: 1px;
+						margin-bottom: 20px;
 					}
 					p {
-						color: #eee;
+						font: 18px/1.5 'Smooch Sans';
+						color: #222;
 					}
 					span {
-						display: block;
+						position: absolute;
+						bottom: 30px;
+						left: 30px;
+						width: 30px;
+						height: 30px;
+						border-radius: 50%;
+						background: #6fd885;
+						font-size: 20px;
+						line-height: 30px;
+						color: #222;
+						text-align: center;
+						display: none;
+						cursor: pointer;
+					}
+
+					&:hover {
+						background: #222;
+						box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+						transform: translate(-5px, -5px);
+
+						h2 {
+							color: #eee;
+						}
+						p {
+							color: #eee;
+						}
+						span {
+							display: block;
+						}
 					}
 				}
 			}
 		}
-	}
-	.account {
-		width: 100%;
-		margin-bottom: 100px;
-
-		.inner {
-			width: 1180px;
-			margin: 0 auto;
+		.account {
+			width: 100%;
+			margin-bottom: 100px;
 
 			h1 {
 				font: normal 32px/1 'Bebas Neue';
@@ -333,64 +325,55 @@
 }
 
 @media screen and (max-width: $tablet) {
-	.join {
+	.join > .inner {
 		.privacy {
-			.inner {
-				width: 100%;
-				padding: 0 30px;
+			.wrap {
+				article {
+					width: 49%;
+					margin-right: 2%;
 
-				.wrap {
-					article {
-						width: 49%;
-						margin-right: 2%;
-
-						&:nth-of-type(2) {
-							margin-right: 0;
-						}
+					&:nth-of-type(2) {
+						margin-right: 0;
 					}
 				}
 			}
 		}
 		.account {
-			.inner {
-				width: 100%;
-				padding: 0 30px;
-				.wrap {
-					.pic {
-						width: 100%;
-						height: 300px;
-						border-right: 0;
-						border-bottom: 1px solid #6fd885;
+			.wrap {
+				.pic {
+					width: 100%;
+					height: 300px;
+					border-right: 0;
+					border-bottom: 1px solid #6fd885;
 
-						.successTxt {
-							&::before {
-								width: 100%;
-								height: 100%;
-								margin: 0;
-							}
-							img {
-								object-position: top center;
-							}
+					.successTxt {
+						&::before {
+							width: 100%;
+							height: 100%;
+							margin: 0;
 						}
-
 						img {
 							object-position: top center;
 						}
 					}
-					.form_wrap {
-						width: 100%;
-						padding: 50px;
 
-						form {
-							fieldset {
-								table {
-									tr {
-										td {
-											margin-bottom: 40px;
+					img {
+						object-position: top center;
+					}
+				}
+				.form_wrap {
+					width: 100%;
+					padding: 50px;
 
-											label {
-												margin-right: 30px;
-											}
+					form {
+						fieldset {
+							table {
+								tr {
+									td {
+										margin-bottom: 40px;
+
+										label {
+											margin-right: 30px;
 										}
 									}
 								}
@@ -404,41 +387,37 @@
 }
 
 @media screen and (max-width: $mobile) {
-	.join {
+	.join > .inner {
 		.privacy {
-			.inner {
-				.wrap {
-					article {
-						width: 100%;
-						margin-right: 0;
-					}
+			.wrap {
+				article {
+					width: 100%;
+					margin-right: 0;
 				}
 			}
 		}
 		.account {
-			.inner {
-				.wrap {
-					.pic {
-						.successTxt {
-							h3 {
-								padding: 0 30px;
-							}
+			.wrap {
+				.pic {
+					.successTxt {
+						h3 {
+							padding: 0 30px;
 						}
 					}
-					.form_wrap {
-						padding: 30px;
+				}
+				.form_wrap {
+					padding: 30px;
 
-						form {
-							fieldset {
-								table {
-									tr {
-										&:nth-of-type(6) td {
-											height: 70px;
-										}
-										td {
-											label {
-												margin-right: 38px;
-											}
+					form {
+						fieldset {
+							table {
+								tr {
+									&:nth-of-type(6) td {
+										height: 70px;
+									}
+									td {
+										label {
+											margin-right: 38px;
 										}
 									}
 								}

@@ -136,133 +136,125 @@ function Community() {
 			subName2={'News'}
 			subVisual={'figure2'}>
 			<div className='event'>
-				<div className='inner'>
-					<h1>EVENT</h1>
-					<div className='wrap'>
-						{eventInfo.map((info, idx) => {
-							return (
-								<article>
-									<div className='pic'>
-										<img src={info.image} />
+				<h1>EVENT</h1>
+				<div className='wrap'>
+					{eventInfo.map((info, idx) => {
+						return (
+							<article>
+								<div className='pic'>
+									<img src={info.image} />
+								</div>
+								<div className='txt_inner'>
+									<div className='txt_left'>
+										<h2>{info.num}</h2>
 									</div>
-									<div className='txt_inner'>
-										<div className='txt_left'>
-											<h2>{info.num}</h2>
-										</div>
-										<div className='txt_right'>
-											<h3>{info.sub}</h3>
-										</div>
-										<span>→</span>
+									<div className='txt_right'>
+										<h3>{info.sub}</h3>
 									</div>
-								</article>
-							);
-						})}
-					</div>
+									<span>→</span>
+								</div>
+							</article>
+						);
+					})}
 				</div>
 			</div>
 
 			<div className='news'>
-				<div className='inner'>
-					<h1>NEWS</h1>
-					<div className='wrap'>
-						<div className='newsTxt'>
-							<h2>VAULT GUCCI</h2>
-							<b>The experimental concept space by Gucci</b>
-							<p>
-								Created from the vision of Alessandro Michele, Vault is a place
-								where past, present and future co-exist through the power of the
-								imagination. Its name evokes an air of magic, denoting a pursuit
-								of precious wonders that go beyond the confines of time and
-								space—free-dimensional and forever in flux.
-							</p>
-						</div>
-						<div className='box_inner'>
-							<div className='inputBox'>
-								<h2>WRITE</h2>
+				<h1>NEWS</h1>
+				<div className='wrap'>
+					<div className='newsTxt'>
+						<h2>VAULT GUCCI</h2>
+						<b>The experimental concept space by Gucci</b>
+						<p>
+							Created from the vision of Alessandro Michele, Vault is a place
+							where past, present and future co-exist through the power of the
+							imagination. Its name evokes an air of magic, denoting a pursuit
+							of precious wonders that go beyond the confines of time and
+							space—free-dimensional and forever in flux.
+						</p>
+					</div>
+					<div className='box_inner'>
+						<div className='inputBox'>
+							<h2>WRITE</h2>
 
-								<h3>TITLE</h3>
-								<input type='text' placeholder='Write a Title' ref={input} />
+							<h3>TITLE</h3>
+							<input type='text' placeholder='Write a Title' ref={input} />
 
-								<h3>CONTENTS</h3>
-								<textarea
-									placeholder='Write your Message'
-									ref={textarea}></textarea>
+							<h3>CONTENTS</h3>
+							<textarea
+								placeholder='Write your Message'
+								ref={textarea}></textarea>
 
-								<div className='btns'>
-									<div className='wrap'>
-										<button onClick={resetPost}>CANCLE</button>
-										<button onClick={createPost}>CREATE</button>
-									</div>
+							<div className='btns'>
+								<div className='wrap'>
+									<button onClick={resetPost}>CANCLE</button>
+									<button onClick={createPost}>CREATE</button>
 								</div>
 							</div>
+						</div>
 
-							<div className='showBox'>
-								<h2>RECENTS NEWS</h2>
-								{posts.map((post, idx) => {
-									let con = post.content.split('\n');
+						<div className='showBox'>
+							<h2>RECENTS NEWS</h2>
+							{posts.map((post, idx) => {
+								let con = post.content.split('\n');
 
-									return (
-										<article key={idx}>
-											{post.editPost ? (
-												<div className='editBox'>
+								return (
+									<article key={idx}>
+										{post.editPost ? (
+											<div className='editBox'>
+												<div className='wrap'>
+													<h3>TITLE</h3>
+													<input
+														type='text'
+														defaultValue={post.title}
+														ref={editInput}
+													/>
+												</div>
+												<div className='wrap'>
+													<h3>CONTENTS</h3>
+													<textarea
+														placeholder='Write your Message'
+														defaultValue={post.content}
+														ref={editTextarea}></textarea>
+												</div>
+
+												<div className='btns'>
 													<div className='wrap'>
-														<h3>TITLE</h3>
-														<input
-															type='text'
-															defaultValue={post.title}
-															ref={editInput}
-														/>
-													</div>
-													<div className='wrap'>
-														<h3>CONTENTS</h3>
-														<textarea
-															placeholder='Write your Message'
-															defaultValue={post.content}
-															ref={editTextarea}></textarea>
-													</div>
-
-													<div className='btns'>
-														<div className='wrap'>
-															<button onClick={() => editSavePost(idx)}>
-																SAVE
-															</button>
-															<button onClick={() => editCanclePost(idx)}>
-																CANCLE
-															</button>
-														</div>
+														<button onClick={() => editSavePost(idx)}>
+															SAVE
+														</button>
+														<button onClick={() => editCanclePost(idx)}>
+															CANCLE
+														</button>
 													</div>
 												</div>
-											) : (
-												<div className='txtBox'>
-													<div className='txtBox_inner'>
-														<h3>{post.title}</h3>
-														<p>
-															{con.map((txt, idx) => {
-																return (
-																	<React.Fragment key={idx}>
-																		{txt}
-																	</React.Fragment>
-																);
-															})}
-														</p>
-													</div>
+											</div>
+										) : (
+											<div className='txtBox'>
+												<div className='txtBox_inner'>
+													<h3>{post.title}</h3>
+													<p>
+														{con.map((txt, idx) => {
+															return (
+																<React.Fragment key={idx}>{txt}</React.Fragment>
+															);
+														})}
+													</p>
+												</div>
 
-													<div className='btns'>
-														<div className='wrap'>
-															<button onClick={() => deletePost(idx)}>
-																DELETE
-															</button>
-															<button onClick={() => editPost(idx)}>
-																EDIT
-															</button>
-														</div>
+												<div className='btns'>
+													<div className='wrap'>
+														<button onClick={() => deletePost(idx)}>
+															DELETE
+														</button>
+														<button onClick={() => editPost(idx)}>EDIT</button>
 													</div>
 												</div>
-											)}
-										</article>
-									);
-								})}
-							</div>
+											</div>
+										)}
+									</article>
+								);
+							})}
 						</div>
 					</div>
 				</div>

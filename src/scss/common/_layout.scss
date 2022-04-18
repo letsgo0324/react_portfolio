@@ -55,8 +55,9 @@
 		}
 	}
 
-	> .trans {
-		width: 100%;
+	> .inner {
+		width: 1180px;
+		margin: 0 auto;
 		min-height: 500px;
 		position: relative;
 		transform: translateY(100px);
@@ -72,7 +73,7 @@
 	}
 
 	&.on {
-		> .trans {
+		> .inner {
 			transform: translateY(0);
 			opacity: 1;
 		}
@@ -90,6 +91,10 @@
 					font-size: 70px;
 				}
 			}
+		}
+		> .inner {
+			width: 100%;
+			padding: 0 30px;
 		}
 	}
 }
