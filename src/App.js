@@ -6,13 +6,7 @@ import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 
 //main
-import Visual from './components/main/Visual';
-import Women from './components/main/Women';
-import Men from './components/main/Men';
-import Rolling from './components/main/Rolling';
-import TextBox from './components/main/TextBox';
-import Banner from './components/main/Banner';
-import News from './components/main/News';
+import Main from './components/main/Main';
 
 //sub
 import About from './components/sub/About';
@@ -22,22 +16,14 @@ import Youtube from './components/sub/Youtube';
 import Contact from './components/sub/Contact';
 import Join from './components/sub/Join';
 
-const path = process.env.PUBLIC_URL;
-
 function App() {
+	const path = process.env.PUBLIC_URL;
+
 	return (
 		<>
 			<Switch>
 				<Route exact path='/'>
-					<Header type={'main'} path={path} logoSrc={`${path}/img/logo1.png`} />
-
-					<Visual />
-					<Women />
-					<Men />
-					<Rolling />
-					<TextBox />
-					<Banner />
-					<News />
+					<Main />
 				</Route>
 
 				<Route path='/'>

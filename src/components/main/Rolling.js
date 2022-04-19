@@ -1,10 +1,8 @@
-import React from 'react';
-
 function Rolling() {
 	return (
-		<section id='rolling'>
+		<section id='rolling' className='myScroll'>
 			<div className='inner'>
-				<h1>ROLLING</h1>
+				<h1>PICS ROLLING</h1>
 			</div>
 		</section>
 	);

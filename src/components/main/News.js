@@ -45,9 +45,9 @@ function News() {
 	}, []);
 
 	return (
-		<section id='news'>
+		<section id='news' className='myScroll'>
 			<div className='inner'>
-				<h1>NEWS</h1>
+				<h1>RECENT NEWS</h1>
 
 				<div className='wrap'>
 					{posts.map((post, idx) => {

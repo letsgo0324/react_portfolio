@@ -11,18 +11,10 @@ function Footer() {
 		<footer>
 			<div className='inner'>
 				<ul className='txt'>
-					<li>
-						<a href='#'>COMPANY</a>
-					</li>
-					<li>
-						<a href='#'>FAQs</a>
-					</li>
-					<li>
-						<a href='#'>CONTACT US</a>
-					</li>
-					<li>
-						<a href='#'>LEGAL</a>
-					</li>
+					<li>COMPANY</li>
+					<li>FAQs</li>
+					<li>CONTACT US</li>
+					<li>LEGAL</li>
 				</ul>
 				<div className='search'>
 					<button>
@@ -35,24 +27,16 @@ function Footer() {
 				<p>2022 Guccio Gucci S.P.A. All rights reserved.</p>
 				<ul className='util'>
 					<li>
-						<a href='#'>
-							<FontAwesomeIcon icon={faTwitter} />
-						</a>
+						<FontAwesomeIcon icon={faTwitter} />
 					</li>
 					<li>
-						<a href='#'>
-							<FontAwesomeIcon icon={faInstagram} />
-						</a>
+						<FontAwesomeIcon icon={faInstagram} />
 					</li>
 					<li>
-						<a href='#'>
-							<FontAwesomeIcon icon={faFacebookF} />
-						</a>
+						<FontAwesomeIcon icon={faFacebookF} />
 					</li>
 					<li>
-						<a href='#'>
-							<FontAwesomeIcon icon={faYoutube} />
-						</a>
+						<FontAwesomeIcon icon={faYoutube} />
 					</li>
 				</ul>
 			</div>
