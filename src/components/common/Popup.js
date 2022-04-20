@@ -1,53 +1,39 @@
-import styled from 'styled-components';
+import { useState, forwardRef, useImperativeHandle } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const Pop = styled.aside`
-	width: 100%;
-	height: 100vh;
-	padding: 10vw;
-	position: fixed;
-	top: 0;
-	left: 0;
-	background: rgba(0, 0, 0, 0.92);
-	z-index: 10;
+const Popup = forwardRef((props, ref) => {
+	const [open, setOpen] = useState(false);
 
-	> span {
-		font: bold 24px/1 'Smooch Sans';
-		color: #eee;
-		letter-spacing: 2px;
-		position: absolute;
-		top: 5vw;
-		right: 5vw;
-		cursor: pointer;
+	useImperativeHandle(ref, () => {
+		return {
+			open: () => setOpen(true),
+			close: () => setOpen(false),
+		};
+	});
 
-		&:hover {
-			color: #6fd885;
-		}
-	}
-	.pop_con {
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-
-		iframe {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: contain;
-		}
-	}
-`;
-
-function Popup(props) {
 	return (
-		<Pop>
-			<span onClick={() => props.setOpen(false)}>CLOSE</span>
-			<div className='pop_con'>{props.children}</div>
-		</Pop>
+		<AnimatePresence>
+			{open && (
+				<motion.aside
+					className='popup'
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					exit={{ opacity: 0, ransition: { delay: 0.5 } }}>
+					<motion.div
+						className='pop_con'
+						initial={{ y: 500, opacity: 0 }}
+						animate={{
+							y: 0,
+							opacity: 1,
+							transition: { delay: 0.5, duration: 0.5 },
+						}}
+						exit={{ y: 500, opacity: 0, transition: { duration: 0.5 } }}>
+						{props.children}
+					</motion.div>
+				</motion.aside>
+			)}
+		</AnimatePresence>
 	);
-}
+});
 
 export default Popup;

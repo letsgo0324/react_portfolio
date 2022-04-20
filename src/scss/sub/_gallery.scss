@@ -196,21 +196,10 @@
 					float: left;
 					cursor: pointer;
 					transition: 0.2s;
+					border-right: 1px solid #666;
 
-					&:nth-of-type(2),
-					&:nth-of-type(5),
-					&:nth-of-type(8),
-					&:nth-of-type(11),
-					&:nth-of-type(14),
-					&:nth-of-type(17),
-					&:nth-of-type(20),
-					&:nth-of-type(23),
-					&:nth-of-type(26),
-					&:nth-of-type(29) {
-						.article_wrap {
-							border-right: 1px solid #666;
-							border-left: 1px solid #666;
-						}
+					&:nth-of-type(3n) {
+						border-right: 1px solid transparent;
 					}
 
 					&:nth-of-type(28),
@@ -328,29 +317,13 @@
 			}
 			.shop {
 				> .wrap {
-					border: 1px solid #666;
-
 					article {
 						width: 50%;
 						border-bottom: 1px solid #666;
+						border-right: 1px solid transparent;
 
 						&:nth-of-type(2n) {
 							border-left: 1px solid #666;
-						}
-						&:nth-of-type(2),
-						&:nth-of-type(5),
-						&:nth-of-type(8),
-						&:nth-of-type(11),
-						&:nth-of-type(14),
-						&:nth-of-type(17),
-						&:nth-of-type(20),
-						&:nth-of-type(23),
-						&:nth-of-type(26),
-						&:nth-of-type(29) {
-							.article_wrap {
-								border-right: 1px solid transparent;
-								border-left: 1px solid transparent;
-							}
 						}
 
 						&:nth-of-type(29),
@@ -468,6 +441,11 @@
 
 					&:nth-of-type(2n) {
 						border-left: 1px solid transparent;
+					}
+					&:nth-of-type(29) {
+						.article_wrap h2 {
+							border-bottom: 1px solid #666;
+						}
 					}
 				}
 			}

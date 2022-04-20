@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import { motion } from 'framer-motion';
 
 import Layout from '../common/Layout';
 import Popup from '../common/Popup';
@@ -10,27 +11,31 @@ function Youtube() {
 	const id = 'PL5cy3lFO3TzpUZIkUQrOcq0xHngdcMJxO';
 	const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&maxResults=${num}&playlistId=${id}`;
 
+	const pop = useRef(null);
 	const [items, setItems] = useState([]);
-	const [open, setOpen] = useState(false);
 	const [index, setIndex] = useState(0);
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		axios.get(url).then((json) => {
 			setItems(json.data.items);
+			setLoading(true);
 		});
 	}, []);
 
-	const num2 = 4;
-	const id2 = 'PL5cy3lFO3Tzo5tZ8n_R7SNNvM6kxv4Xaf';
-	const url2 = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&maxResults=${num2}&playlistId=${id2}`;
+	const numVid = 4;
+	const idVid = 'PL5cy3lFO3Tzo5tZ8n_R7SNNvM6kxv4Xaf';
+	const urlVid = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&maxResults=${numVid}&playlistId=${idVid}`;
 
-	const [items2, setItems2] = useState([]);
-	const [open2, setOpen2] = useState(false);
-	const [index2, setIndex2] = useState(0);
+	const popVid = useRef(null);
+	const [itemsVid, setItemsVid] = useState([]);
+	const [indexVid, setIndexVid] = useState(0);
+	const [loadingVid, setLoadingVid] = useState(false);
 
 	useEffect(() => {
-		axios.get(url2).then((json) => {
-			setItems2(json.data.items);
+		axios.get(urlVid).then((json) => {
+			setItemsVid(json.data.items);
+			setLoadingVid(true);
 		});
 	}, []);
 
@@ -45,13 +50,13 @@ function Youtube() {
 					<div className='videoList'>
 						<h1>VIDEO</h1>
 						<div className='wrap'>
-							{items2.map((item, idx) => {
+							{itemsVid.map((item, idx) => {
 								const tit = item.snippet.title;
 								const desc = item.snippet.description;
 								const date = item.snippet.publishedAt;
 								const clickBtn = () => {
-									setOpen2(true);
-									setIndex2(idx);
+									setIndexVid(idx);
+									popVid.current.open();
 								};
 
 								return (
@@ -82,8 +87,8 @@ function Youtube() {
 						const desc = item.snippet.description;
 						const date = item.snippet.publishedAt;
 						const clickBtn = () => {
-							setOpen(true);
 							setIndex(idx);
+							pop.current.open();
 						};
 
 						return (
@@ -105,30 +110,39 @@ function Youtube() {
 				</div>
 			</Layout>
 
-			{open ? (
-				<Popup setOpen={setOpen}>
+			<Popup ref={popVid}>
+				{loadingVid && (
+					<iframe
+						src={
+							'https://www.youtube.com/embed/' +
+							itemsVid[indexVid].snippet.resourceId.videoId
+						}
+						frameBorder='0'></iframe>
+				)}
+				<motion.span
+					onClick={() => popVid.current.close()}
+					whileHover={{ scale: 1.2 }}
+					whileTap={{ scale: 0.8 }}>
+					CLOSE
+				</motion.span>
+			</Popup>
+
+			<Popup ref={pop}>
+				{loading && (
 					<iframe
 						src={
 							'https://www.youtube.com/embed/' +
 							items[index].snippet.resourceId.videoId
 						}
 						frameBorder='0'></iframe>
-				</Popup>
-			) : null}
-
-			{open2 ? (
-				<aside className='pop2'>
-					<span onClick={() => setOpen2(false)}>CLOSE</span>
-					<div className='pop_con'>
-						<iframe
-							src={
-								'https://www.youtube.com/embed/' +
-								items2[index2].snippet.resourceId.videoId
-							}
-							frameBorder='0'></iframe>
-					</div>
-				</aside>
-			) : null}
+				)}
+				<motion.span
+					onClick={() => pop.current.close()}
+					whileHover={{ scale: 1.2 }}
+					whileTap={{ scale: 0.8 }}>
+					CLOSE
+				</motion.span>
+			</Popup>
 		</>
 	);
 }
