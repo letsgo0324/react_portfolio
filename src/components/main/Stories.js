@@ -5,15 +5,15 @@ function Stories() {
 		<section id='stories' className='myScroll'>
 			<div className='inner'>
 				<h1>STORIES</h1>
-				<div className='wrap'>
-					<div className='wrap_stories'>
-						<div className='txt'>
-							<h2>PEOPLE & EVENTS</h2>
-						</div>
-						<div className='pic'>
-							<img src={`${path}/img/main_stories.jpg`} />
-						</div>
+				<div className='wrap_stories'>
+					<div className='txt'>
+						<h2>PEOPLE & EVENTS</h2>
 					</div>
+					<div className='pic'>
+						<img src={`${path}/img/main_stories.jpg`} />
+					</div>
+				</div>
+				<div className='wrap'>
 					<article>
 						<h2>INTRODUCING GUCCI GAOK</h2>
 					</article>
