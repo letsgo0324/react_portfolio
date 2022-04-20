@@ -2,18 +2,149 @@
 	> .inner {
 		transition: 0s;
 
-		.campaign {
+		.loadingImg {
+			position: fixed;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: -1;
+		}
+		.shop {
 			width: 100%;
 			margin-top: 100px;
-			margin-bottom: 100px;
+			margin-bottom: 200px;
+			position: relative;
 
-			.loading {
-				position: fixed;
-				top: 0;
-				left: 50%;
-				transform: translateX(-50%);
-				z-index: -1;
+			h1 {
+				font: normal 32px/1 'Bebas Neue';
+				color: #222;
+				letter-spacing: 2px;
+				margin-bottom: 30px;
 			}
+
+			.searchBox {
+				position: relative;
+				width: 100%;
+				height: 40px;
+				margin-bottom: 20px;
+
+				> .search {
+					position: absolute;
+					right: 20px;
+					top: 0;
+					width: 30%;
+					height: 40px;
+					border-bottom: 2px solid #222;
+					background: #fff;
+
+					input {
+						background: #fff;
+						border: none;
+						width: calc(100% - 30px);
+						height: 38px;
+						font: 24px/1 'Smooch Sans';
+						color: #444;
+						letter-spacing: 0.5px;
+						padding-left: 10px;
+					}
+					> button {
+						width: 30px;
+						height: 38px;
+						font-size: 20px;
+						text-align: center;
+						line-height: 38px;
+						color: #222;
+						background: none;
+						border: none;
+						cursor: pointer;
+
+						&:hover {
+							color: #6fd885;
+						}
+					}
+				}
+				> button {
+					position: absolute;
+					left: 20px;
+					top: 0;
+					width: 15%;
+					height: 40px;
+					border: 1px solid #222;
+					background: #fff;
+					font: bold 18px/1 'Smooch Sans';
+					color: #222;
+					letter-spacing: 1px;
+					cursor: pointer;
+
+					&:hover {
+						background: #222;
+						color: #eee;
+					}
+				}
+			}
+
+			> .wrap {
+				transform: translateY(200px);
+				opacity: 0;
+				transition: 1s;
+
+				&.on {
+					transform: translateY(0);
+					opacity: 1;
+				}
+
+				article {
+					width: 33.33%;
+					float: left;
+					cursor: pointer;
+
+					.article_wrap {
+						padding: 20px 20px 0 20px;
+
+						.pic {
+							width: 100%;
+							margin-bottom: 10px;
+							overflow: hidden;
+
+							img {
+								width: 100%;
+								height: 100%;
+								object-fit: cover;
+								transition: 0.5s;
+							}
+						}
+
+						h2 {
+							font: 18px/1 'Bebas Neue';
+							color: #444;
+							text-align: right;
+							padding-bottom: 30px;
+							position: relative;
+						}
+					}
+					&:hover {
+						background: #222;
+
+						.article_wrap {
+							.pic img {
+								transform: scale(1.05);
+							}
+						}
+
+						h2 {
+							color: #bbb;
+
+							span {
+								color: #bbb;
+							}
+						}
+					}
+				}
+			}
+		}
+		.campaign {
+			width: 100%;
+			margin-bottom: 100px;
 
 			h1 {
 				font: normal 32px/1 'Bebas Neue';
@@ -166,104 +297,45 @@
 				}
 			}
 		}
-		.shop {
-			width: 100%;
-			margin-bottom: 100px;
-			position: relative;
-
-			h1 {
-				font: normal 32px/1 'Bebas Neue';
-				color: #222;
-				letter-spacing: 2px;
-				margin-bottom: 30px;
-			}
-			> .wrap {
-				border-top: 1px solid #666;
-				border-bottom: 1px solid #666;
-				border-left: 1px solid transparent;
-				border-right: 1px solid transparent;
-				transform: translateY(200px);
-				opacity: 0;
-				transition: 1s;
-
-				&.on {
-					transform: translateY(0);
-					opacity: 1;
-				}
-
-				article {
-					width: 33.33%;
-					float: left;
-					cursor: pointer;
-					transition: 0.2s;
-					border-right: 1px solid #666;
-
-					&:nth-of-type(3n) {
-						border-right: 1px solid transparent;
-					}
-
-					&:nth-of-type(28),
-					&:nth-of-type(29),
-					&:nth-of-type(30) {
-						.article_wrap h2 {
-							border-bottom: 1px solid transparent;
-						}
-					}
-
-					.article_wrap {
-						padding: 20px 20px 0 20px;
-
-						.pic {
-							width: 100%;
-							height: 450px;
-							margin-bottom: 10px;
-
-							img {
-								width: 100%;
-								height: 100%;
-								object-fit: cover;
-							}
-						}
-
-						h2 {
-							font: 18px/1 'Bebas Neue';
-							color: #444;
-							text-align: right;
-							padding-bottom: 30px;
-							position: relative;
-							border-bottom: 1px solid #666;
-
-							span {
-								position: absolute;
-								top: 0;
-								left: 0;
-								text-align: left;
-								font: 20px/1 'Bebas Neue';
-								color: #444;
-							}
-						}
-					}
-					&:hover {
-						background: #222;
-						transform: scale(1.02);
-
-						h2 {
-							color: #bbb;
-
-							span {
-								color: #bbb;
-							}
-						}
-					}
-				}
-			}
-		}
 	}
 }
 
 @media screen and (max-width: $tablet) {
 	.gallery {
 		> .inner {
+			.shop {
+				.searchBox {
+					> .search {
+						right: 10px;
+						width: 45%;
+
+						input {
+							font-size: 18px;
+							height: 35px;
+						}
+					}
+					> button {
+						left: 10px;
+						width: 45%;
+					}
+				}
+				> .wrap {
+					article {
+						width: 50%;
+
+						.article_wrap {
+							padding: 10px 10px 0 10px;
+							h2 {
+								text-align: center;
+
+								span {
+									display: none;
+								}
+							}
+						}
+					}
+				}
+			}
 			.campaign {
 				.wrap {
 					article {
@@ -315,42 +387,6 @@
 					}
 				}
 			}
-			.shop {
-				> .wrap {
-					article {
-						width: 50%;
-						border-bottom: 1px solid #666;
-						border-right: 1px solid transparent;
-
-						&:nth-of-type(2n) {
-							border-left: 1px solid #666;
-						}
-
-						&:nth-of-type(29),
-						&:nth-of-type(30) {
-							border-bottom: 1px solid transparent;
-							.article_wrap h2 {
-								border-bottom: 1px solid transparent;
-							}
-						}
-
-						.article_wrap {
-							.pic {
-								height: 280px;
-							}
-
-							h2 {
-								text-align: center;
-								border-bottom: 1px solid transparent;
-
-								span {
-									display: none;
-								}
-							}
-						}
-					}
-				}
-			}
 		}
 	}
 }
@@ -392,13 +428,29 @@
 				}
 			}
 		}
-		.shop {
-		}
 	}
 }
 
 @media screen and (max-width: $mobile) {
 	.gallery > .inner {
+		.shop {
+			.searchBox {
+				height: 90px;
+
+				> .search {
+					width: calc(100% - 20px);
+					top: 50px;
+				}
+				> button {
+					width: calc(100% - 20px);
+				}
+			}
+			> .wrap {
+				article {
+					width: 100%;
+				}
+			}
+		}
 		.campaign {
 			.wrap {
 				article {
@@ -430,22 +482,6 @@
 					}
 					&:nth-of-type(20) {
 						width: 100%;
-					}
-				}
-			}
-		}
-		.shop {
-			> .wrap {
-				article {
-					width: 100%;
-
-					&:nth-of-type(2n) {
-						border-left: 1px solid transparent;
-					}
-					&:nth-of-type(29) {
-						.article_wrap h2 {
-							border-bottom: 1px solid #666;
-						}
 					}
 				}
 			}

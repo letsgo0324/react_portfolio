@@ -3,62 +3,92 @@
 	background: #010101;
 	padding: 80px 0;
 
-	.inner {
-		width: 1180px;
+	.wrap_banner {
+		width: 1280px;
 		margin: 0 auto;
 
-		.wrap_banner {
-			width: 100%;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			align-items: center;
+		.swiper {
+			height: 100%;
 
-			article {
-				width: 65%;
-
-				h1 {
-					font: 60px/1 'Bebas Neue';
-					color: #eee;
-					letter-spacing: 2px;
-					margin-bottom: 20px;
+			.swiper-button-prev,
+			.swiper-button-next {
+				color: #eee;
+			}
+			.swiper-pagination {
+				.swiper-pagination-bullet {
+					background: #fff;
+					opacity: 0.5;
 				}
-				h2 {
-					font: 24px/1.2 'Bebas Neue';
-					color: #aaa;
-					letter-spacing: 1px;
-					margin-bottom: 20px;
-				}
-				p {
-					font: 16px/1.2 'Smooch Sans';
-					color: #aaa;
-					margin-bottom: 50px;
-				}
-				button {
-					width: 160px;
-					height: 36px;
-					border-radius: 18px;
-					font: 16px/1 'Bebas Neue';
-					color: #eee;
-					letter-spacing: 2px;
-					background: #222;
-					border: 1px solid #eee;
-					cursor: pointer;
-
-					&:hover {
-						background: #eee;
-						color: #222;
-					}
+				.swiper-pagination-bullet-active {
+					background: #6fd885;
+					opacity: 1;
 				}
 			}
-			.pic {
-				width: 30%;
-				height: 400px;
 
-				img {
-					width: 100%;
-					height: 100%;
-					object-fit: cover;
+			.swiper-slide {
+				width: 100%;
+
+				.inner {
+					width: 1180px;
+					margin: 0 auto;
+
+					.con_banner {
+						width: 100%;
+						margin: 0 auto;
+						display: flex;
+						flex-wrap: wrap;
+						justify-content: center;
+						align-items: center;
+
+						article {
+							width: 65%;
+							padding-right: 50px;
+
+							h1 {
+								font: 60px/1 'Bebas Neue';
+								color: #eee;
+								letter-spacing: 2px;
+								margin-bottom: 20px;
+							}
+							h2 {
+								font: 24px/1.2 'Bebas Neue';
+								color: #aaa;
+								letter-spacing: 1px;
+								margin-bottom: 20px;
+							}
+							p {
+								font: 16px/1.2 'Smooch Sans';
+								color: #aaa;
+								margin-bottom: 50px;
+							}
+							button {
+								width: 160px;
+								height: 36px;
+								border-radius: 18px;
+								font: 16px/1 'Bebas Neue';
+								color: #eee;
+								letter-spacing: 2px;
+								background: transparent;
+								border: 1px solid #eee;
+								cursor: pointer;
+
+								&:hover {
+									background: #eee;
+									color: #222;
+								}
+							}
+						}
+						.pic {
+							width: 30%;
+							height: 400px;
+
+							img {
+								width: 100%;
+								height: 100%;
+								object-fit: cover;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -67,23 +97,41 @@
 
 @media screen and (max-width: $tablet) {
 	#banner {
-		.inner {
+		.wrap_banner {
 			width: 100%;
 			padding: 0 30px;
 
-			.wrap_banner {
-				article {
-					width: 50%;
-					h1 {
-						font-size: 8vw;
-					}
-					p {
-						display: none;
-					}
+			.swiper {
+				.swiper-button-prev {
+					left: 0;
 				}
-				.pic {
-					width: 50%;
-					height: auto;
+
+				.swiper-button-next {
+					right: 0;
+				}
+				.swiper-slide {
+					.inner {
+						width: 100%;
+
+						.con_banner {
+							article {
+								width: 100%;
+								text-align: center;
+								margin-bottom: 50px;
+								padding-right: 0;
+								h1 {
+									font-size: 8vw;
+								}
+								p {
+									display: none;
+								}
+							}
+							.pic {
+								width: 80%;
+								height: 400px;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -93,21 +141,5 @@
 @media screen and (max-width: $mobile) {
 	#banner {
 		padding: 50px 0;
-
-		.inner {
-			.wrap_banner {
-				article {
-					width: 100%;
-					text-align: center;
-
-					h1 {
-						font-size: 15vw;
-					}
-				}
-				.pic {
-					width: 100%;
-				}
-			}
-		}
 	}
 }
