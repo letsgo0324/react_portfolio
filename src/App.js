@@ -1,4 +1,8 @@
 import { Route, Switch } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setMembers } from './redux/actions';
+import axios from 'axios';
+
 import './scss/style.scss';
 
 //common
@@ -15,9 +19,23 @@ import Gallery from './components/sub/Gallery';
 import Youtube from './components/sub/Youtube';
 import Contact from './components/sub/Contact';
 import Join from './components/sub/Join';
+import { useEffect } from 'react';
 
 function App() {
 	const path = process.env.PUBLIC_URL;
+
+	const dispatch = useDispatch();
+	const fetchMembers = async () => {
+		const url = path + '/DB/member.json';
+
+		await axios.get(url).then((json) => {
+			dispatch(setMembers(json.data.data));
+		});
+	};
+
+	useEffect(() => {
+		fetchMembers();
+	}, []);
 
 	return (
 		<>

@@ -5,10 +5,12 @@ import Header from '../common/Header';
 import Visual from './Visual';
 import Women from './Women';
 import Men from './Men';
+import Vids from './Vids';
 import Rolling from './Rolling';
 import Stories from './Stories';
 import Banner from './Banner';
 import News from './News';
+import Member from './Member';
 import Btns from './Btns';
 import Anime from '../../class/anime.js';
 
@@ -66,10 +68,12 @@ function Main() {
 			<Visual />
 			<Women />
 			<Men />
+			<Vids />
 			<Rolling />
 			<Stories />
 			<Banner />
 			<News />
+			<Member />
 			<Btns setIndex={setIndex} />
 		</main>
 	);

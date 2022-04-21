@@ -1,0 +1,28 @@
+#vids {
+	width: 100%;
+	height: 100vh;
+	padding: 50px 0;
+	margin-bottom: 100px;
+	background: #eee;
+
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+
+		h1 {
+			font: normal 32px/1 'Bebas Neue';
+			color: #222;
+			letter-spacing: 2px;
+			margin-bottom: 50px;
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	#vids {
+		.inner {
+			width: 100%;
+			padding: 0 30px;
+		}
+	}
+}

@@ -1,17 +1,11 @@
 import Layout from '../common/Layout';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 function About() {
 	const path = process.env.PUBLIC_URL;
-	const [members, setMembers] = useState([]);
-
-	useEffect(() => {
-		axios.get(`${path}/DB/member.json`).then((json) => {
-			setMembers(json.data.data);
-			//console.log(json.data.data);
-		});
-	}, []);
+	const members = useSelector((state) => state.memberReducer.members);
 
 	const [globals, setGlobals] = useState([]);
 
