@@ -83,6 +83,8 @@
 
 @media screen and (max-width: $tablet) {
 	#men {
+		margin-bottom: 0;
+
 		.inner {
 			width: 100%;
 			padding: 0 30px;
@@ -147,6 +149,7 @@
 
 @media screen and (max-width: $mobile) {
 	#men {
+		margin-bottom: 50px;
 		.inner {
 			.wrap_men {
 				article {

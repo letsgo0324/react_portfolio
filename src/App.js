@@ -1,7 +1,8 @@
-import { Route, Switch } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { setMembers } from './redux/actions';
 import axios from 'axios';
+import { Route, Switch } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { setMembers, setYoutube } from './redux/actions';
+import { useEffect } from 'react';
 
 import './scss/style.scss';
 
@@ -19,12 +20,12 @@ import Gallery from './components/sub/Gallery';
 import Youtube from './components/sub/Youtube';
 import Contact from './components/sub/Contact';
 import Join from './components/sub/Join';
-import { useEffect } from 'react';
 
 function App() {
 	const path = process.env.PUBLIC_URL;
 
 	const dispatch = useDispatch();
+
 	const fetchMembers = async () => {
 		const url = path + '/DB/member.json';
 
@@ -33,8 +34,20 @@ function App() {
 		});
 	};
 
+	const fetchYoutube = async () => {
+		const key = 'AIzaSyDXkbK7JOz1GmisiXd0C5iKd_FmEK3uk3o';
+		const numVid = 4;
+		const idVid = 'PL5cy3lFO3Tzo5tZ8n_R7SNNvM6kxv4Xaf';
+		const urlVid = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&maxResults=${numVid}&playlistId=${idVid}`;
+
+		await axios.get(urlVid).then((json) => {
+			dispatch(setYoutube(json.data.items));
+		});
+	};
+
 	useEffect(() => {
 		fetchMembers();
+		fetchYoutube();
 	}, []);
 
 	return (

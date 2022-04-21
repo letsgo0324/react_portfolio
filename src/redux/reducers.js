@@ -9,9 +9,19 @@ const memberReducer = (state = { members: [] }, action) => {
 			return state;
 	}
 };
+const youtubeReducer = (state = { youtube: [] }, action) => {
+	switch (action.type) {
+		case 'SET_YOUTUBE':
+			return { ...state, youtube: action.payload };
+
+		default:
+			return state;
+	}
+};
 
 const reducers = combineReducers({
 	memberReducer,
+	youtubeReducer,
 });
 
 export default reducers;

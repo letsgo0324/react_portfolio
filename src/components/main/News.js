@@ -47,7 +47,24 @@ function News() {
 	return (
 		<section id='news' className='myScroll'>
 			<div className='inner'>
-				<h1>RECENT NEWS</h1>
+				<div className='tit'>
+					<h1>RECENT NEWS</h1>
+					<p>
+						Within a hall of illusionistic mirrors, Creative Director Alessandro
+						Michele presented his latest Exquisite Gucci collection. <br />
+						On the runway, makeup becomes an accessory. In the words of Thomas
+						de Kluyver, Global Makeup Consultant for Gucci Beauty “Makeup is a
+						fun embellishment worn as an extension of personality rather than
+						something used to conceal or hide yourself.”
+						<br />
+						Details reveal a punk energy with delicate embellishments—sparkling
+						rhinestones, little eyelashes, metallic foil—an exquisite take on
+						subcultural makeup. Mirroring the collection, the beauty looks are
+						defined by unusual and understated colors accentuating lips while
+						nails are ultra-shiny, painted with signature nail polishes and
+						adorned by bold jewelry.
+					</p>
+				</div>
 
 				<div className='wrap'>
 					{posts.map((post, idx) => {

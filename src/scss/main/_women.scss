@@ -82,6 +82,8 @@
 
 @media screen and (max-width: $tablet) {
 	#women {
+		margin-bottom: 0;
+
 		.inner {
 			width: 100%;
 			padding: 0 30px;
@@ -146,6 +148,7 @@
 
 @media screen and (max-width: $mobile) {
 	#women {
+		margin-bottom: 50px;
 		.inner {
 			.wrap_women {
 				article {

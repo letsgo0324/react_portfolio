@@ -46,6 +46,7 @@
 								width: 100%;
 								height: 100%;
 								object-fit: cover;
+								vertical-align: middle; //이미지 하단 공백 제거
 								transition: 0.5s;
 							}
 						}
@@ -122,6 +123,7 @@
 
 						.thumb {
 							width: 49%;
+							height: auto;
 						}
 					}
 				}
