@@ -35,7 +35,7 @@ function Campaign() {
 												<div className='txt_inner'>
 													<h2>{idx + 1}</h2>
 													<h3>{item.title}</h3>
-													<span>view</span>
+													<span>VIEW</span>
 												</div>
 											</div>
 										</article>
