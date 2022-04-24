@@ -6,6 +6,7 @@
 		height: 300px;
 		position: relative;
 		background: #222;
+		overflow: hidden;
 
 		&::after {
 			content: '';
@@ -16,6 +17,7 @@
 			width: 55vw;
 			height: 210px;
 			background: rgba(111, 216, 134, 0.4);
+			animation: moveImg 2s alternate ease-in-out;
 		}
 
 		> .inner {
@@ -24,6 +26,7 @@
 			margin: 0 auto;
 			position: relative;
 			z-index: 1;
+			animation: moveTit 1s alternate ease-in-out;
 
 			h1 {
 				font: 6vw/1 'Bebas Neue';
@@ -45,6 +48,7 @@
 			top: 30px;
 			width: 57vw;
 			height: 210px;
+			animation: moveImg 1s alternate ease-in;
 
 			img {
 				width: 100%;
@@ -77,6 +81,23 @@
 			transform: translateY(0);
 			opacity: 1;
 		}
+	}
+}
+
+@keyframes moveTit {
+	0% {
+		left: -100%;
+	}
+	100% {
+		left: 0;
+	}
+}
+@keyframes moveImg {
+	0% {
+		right: -100%;
+	}
+	100% {
+		right: 0;
 	}
 }
 

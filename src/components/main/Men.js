@@ -1,12 +1,28 @@
-function Men() {
+function Men(props) {
 	const path = process.env.PUBLIC_URL;
+	const scrolled = props.scrolled;
+	const start = props.posStart;
+	const base = -100;
+	const position = scrolled - start + base;
 
 	return (
 		<section id='men' className='myScroll'>
 			<div className='inner'>
 				<div className='wrap_men'>
-					<h1>MEN</h1>
-					<article>
+					<h1
+						style={
+							position >= 0
+								? { transform: `translateY(-${position / 2}px)` }
+								: null
+						}>
+						MEN
+					</h1>
+					<article
+						style={
+							position >= 0
+								? { transform: `translateX(-${position / 2}px)` }
+								: null
+						}>
 						<div className='pic'>
 							<img src={`${path}/img/main_men1.jpg`} />
 						</div>
@@ -15,7 +31,12 @@ function Men() {
 							<p>Silk tie</p>
 						</div>
 					</article>
-					<article>
+					<article
+						style={
+							position >= 0
+								? { transform: `translateX(${position * 1.5}px)` }
+								: null
+						}>
 						<div className='pic'>
 							<img src={`${path}/img/main_men2.jpg`} />
 						</div>

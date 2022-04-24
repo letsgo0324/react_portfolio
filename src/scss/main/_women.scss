@@ -1,8 +1,7 @@
 #women {
 	width: 100%;
 	height: 100vh;
-	padding: 50px 0;
-	margin-bottom: 100px;
+	padding: 150px 0 50px;
 
 	.inner {
 		width: 1180px;
@@ -82,6 +81,7 @@
 
 @media screen and (max-width: $tablet) {
 	#women {
+		padding-top: 100px;
 		height: auto;
 		margin-bottom: 0;
 

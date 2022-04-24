@@ -1,8 +1,7 @@
 #men {
 	width: 100%;
 	height: 100vh;
-	padding: 50px 0;
-	margin-bottom: 100px;
+	padding: 150px 0 50px;
 
 	.inner {
 		width: 1180px;
@@ -83,6 +82,7 @@
 
 @media screen and (max-width: $tablet) {
 	#men {
+		padding-top: 100px;
 		height: auto;
 		margin-bottom: 0;
 
@@ -106,6 +106,7 @@
 					display: block;
 					clear: both;
 				}
+
 				article {
 					width: 49%;
 					height: 100%;

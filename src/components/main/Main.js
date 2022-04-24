@@ -22,6 +22,7 @@ function Main() {
 	const main = useRef(null);
 	const pos = useRef([]);
 	const [index, setIndex] = useState(0);
+	const [scrolled, setScrolled] = useState(0);
 
 	const getPos = () => {
 		const sections = main.current.querySelectorAll('.myScroll');
@@ -32,6 +33,7 @@ function Main() {
 	const activation = () => {
 		const base = -300;
 		let scroll = window.scrollY;
+		setScrolled(scroll);
 		const btns = main.current.querySelectorAll('.scrollBtns li');
 
 		pos.current.map((pos, idx) => {
@@ -66,9 +68,9 @@ function Main() {
 		<main ref={main}>
 			<Header type={'main'} path={path} logoSrc={`${path}/img/logo1.png`} />
 			<Visual />
-			<Women />
-			<Men />
-			<Vids />
+			<Women scrolled={scrolled} posStart={pos.current[1]} />
+			<Men scrolled={scrolled} posStart={pos.current[2]} />
+			<Vids scrolled={scrolled} posStart={pos.current[3]} />
 			<Campaign />
 			<Stories />
 			<Banner />
