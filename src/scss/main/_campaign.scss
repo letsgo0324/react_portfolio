@@ -1,0 +1,204 @@
+#campaign {
+	width: 100%;
+	height: 70vh;
+	padding: 50px 0;
+	margin-bottom: 100px;
+
+	.inner {
+		width: 1180px;
+		height: 100%;
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+
+		.campaign_inner {
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+
+			.campaign_wrap {
+				width: 100%;
+				height: 100%;
+				display: flex;
+
+				.campaign_tit {
+					width: 220px;
+					border-top: 5px solid #222;
+					margin-right: 20px;
+
+					h1 {
+						font: normal 50px/1 'Bebas Neue';
+						color: #222;
+						letter-spacing: 2px;
+						padding-top: 30px;
+					}
+				}
+
+				article {
+					flex: 1;
+					width: 20%;
+					padding: 40px;
+					position: relative;
+					transition: 0.5s;
+					cursor: pointer;
+					background: #222;
+
+					.pic {
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						top: 0;
+						left: 0;
+						opacity: 0.5;
+						transition: 0.2s;
+
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+							filter: grayscale(1);
+						}
+					}
+					.txt {
+						width: 100%;
+						height: 100%;
+						position: relative;
+						display: flex;
+						flex-wrap: wrap;
+
+						.txt_inner {
+							width: 100%;
+							position: absolute;
+							bottom: 0;
+							left: 0;
+
+							h2 {
+								width: 100%;
+								font: 80px/1 'Bebas Neue';
+								color: #eee;
+								margin-bottom: 10px;
+							}
+							h3 {
+								width: 100%;
+								font: 32px/1 'Bebas Neue';
+								color: #eee;
+								margin-bottom: 30px;
+							}
+							span {
+								width: 100%;
+								display: block;
+								font: 20px/1 'Smooch Sans';
+								color: #eee;
+								cursor: pointer;
+								position: relative;
+
+								&::after {
+									content: '';
+									display: block;
+									position: absolute;
+									top: 50%;
+									left: 40px;
+									width: 0;
+									height: 2px;
+									background: #eee;
+									opacity: 0;
+									transition: 0.2s;
+								}
+							}
+						}
+					}
+
+					&:hover {
+						flex-grow: 2;
+
+						.pic {
+							opacity: 1;
+							img {
+								filter: grayscale(0);
+							}
+						}
+						.txt .txt_inner span {
+							font-weight: bold;
+
+							&::after {
+								width: calc(100% - 40px);
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	#campaign {
+		height: auto;
+
+		.inner {
+			width: 100%;
+			padding: 0 30px;
+
+			.campaign_inner {
+				position: relative;
+				display: block;
+
+				.campaign_wrap {
+					display: block;
+
+					.campaign_tit {
+						width: 100%;
+						border-top: none;
+						margin-right: 0;
+						margin-bottom: 30px;
+
+						h1 {
+							font-size: 32px;
+						}
+					}
+
+					article {
+						width: 50%;
+						height: 50vh;
+						float: left;
+						padding: 20px;
+
+						.txt {
+							.txt_inner {
+								h2 {
+									font-size: 40px;
+								}
+								h3 {
+									font-size: 26px;
+									margin-bottom: 10px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	#campaign {
+		.inner {
+			.campaign_inner {
+				.campaign_wrap {
+					article {
+						width: 100%;
+						height: 50vh;
+					}
+				}
+			}
+		}
+	}
+}

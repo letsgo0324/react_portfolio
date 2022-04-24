@@ -154,14 +154,9 @@
 			}
 
 			> .wrap {
-				transform: translateY(200px);
-				opacity: 0;
+				transform: translateY(0);
+				opacity: 1;
 				transition: 1s;
-
-				&.on {
-					transform: translateY(0);
-					opacity: 1;
-				}
 
 				article {
 					width: 220px;

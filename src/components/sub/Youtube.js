@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setYoutube } from '../../redux/actions';
 import { motion } from 'framer-motion';
 
 import Layout from '../common/Layout';
@@ -10,8 +9,6 @@ import Popup from '../common/Popup';
 function Youtube() {
 	//==============================================video
 	const vidData = useSelector((state) => state.youtubeReducer.youtube);
-	const dispatch = useDispatch();
-
 	const popVid = useRef(null);
 	const [indexVid, setIndexVid] = useState(0);
 

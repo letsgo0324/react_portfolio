@@ -1,9 +1,12 @@
 import axios from 'axios';
 import Masonry from 'react-masonry-component';
 import { useEffect, useState, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { motion } from 'framer-motion';
+//import { startAnimation } from 'framer-motion/types/animation/utils/transitions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import * as types from '../../redux/actionType';
 
 import Layout from '../common/Layout';
 import Popup from '../common/Popup';
@@ -50,6 +53,8 @@ function Gallery() {
 			}
 			setShopItems(json.data.photos.photo);
 			setShopLoading(true);
+
+			//	console.log(json.data);
 		});
 
 		setTimeout(() => {
@@ -91,35 +96,9 @@ function Gallery() {
 	}, []);
 
 	//======================================================campaign
-	const key = 'cfb398b73c61a4facf20c641274d8954';
-	const method_album = 'flickr.photosets.getPhotos';
-	const num = 20;
-	const username = '195365059@N08';
-	const photoset_id = '72177720298076992';
-	const url = `https://www.flickr.com/services/rest/?method=${method_album}&api_key=${key}&per_page=${num}&format=json&nojsoncallback=1&user_id=${username}&photoset_id=${photoset_id}`;
-
+	const gallery = useSelector((state) => state.galleryReducer.gallery);
 	const pop = useRef(null);
-	const [items, setItems] = useState([]);
 	const [index, setIndex] = useState(0);
-
-	const frame = useRef(null);
-	const [loading, setLoading] = useState(false);
-
-	const getFlickr = async () => {
-		await axios.get(url).then((json) => {
-			setItems(json.data.photoset.photo);
-			setLoading(true);
-		});
-
-		setTimeout(() => {
-			frame.current.classList.add('on');
-			setLoadingImg(false);
-		}, 1000);
-	};
-
-	useEffect(() => {
-		getFlickr();
-	}, []);
 
 	return (
 		<>
@@ -194,8 +173,8 @@ function Gallery() {
 				<div className='campaign'>
 					<h1>Campaign</h1>
 
-					<div className='wrap' ref={frame}>
-						{items.map((item, idx) => {
+					<div className='wrap'>
+						{gallery.map((item, idx) => {
 							return (
 								<article
 									key={idx}
@@ -232,9 +211,9 @@ function Gallery() {
 			</Popup>
 
 			<Popup ref={pop}>
-				{loading && (
+				{gallery.length !== 0 && (
 					<img
-						src={`https://live.staticflickr.com/${items[index].server}/${items[index].id}_${items[index].secret}_b.jpg`}
+						src={`https://live.staticflickr.com/${gallery[index].server}/${gallery[index].id}_${gallery[index].secret}_b.jpg`}
 					/>
 				)}
 				<motion.span

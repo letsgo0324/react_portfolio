@@ -6,7 +6,7 @@ import Visual from './Visual';
 import Women from './Women';
 import Men from './Men';
 import Vids from './Vids';
-import Rolling from './Rolling';
+import Campaign from './Campaign';
 import Stories from './Stories';
 import Banner from './Banner';
 import News from './News';
@@ -69,7 +69,7 @@ function Main() {
 			<Women />
 			<Men />
 			<Vids />
-			<Rolling />
+			<Campaign />
 			<Stories />
 			<Banner />
 			<News />

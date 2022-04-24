@@ -1,8 +1,7 @@
-import axios from 'axios';
 import { Route, Switch } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { setMembers, setYoutube } from './redux/actions';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import * as types from './redux/actionType';
 
 import './scss/style.scss';
 
@@ -26,28 +25,10 @@ function App() {
 
 	const dispatch = useDispatch();
 
-	const fetchMembers = async () => {
-		const url = path + '/DB/member.json';
-
-		await axios.get(url).then((json) => {
-			dispatch(setMembers(json.data.data));
-		});
-	};
-
-	const fetchYoutube = async () => {
-		const key = 'AIzaSyDXkbK7JOz1GmisiXd0C5iKd_FmEK3uk3o';
-		const numVid = 4;
-		const idVid = 'PL5cy3lFO3Tzo5tZ8n_R7SNNvM6kxv4Xaf';
-		const urlVid = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&maxResults=${numVid}&playlistId=${idVid}`;
-
-		await axios.get(urlVid).then((json) => {
-			dispatch(setYoutube(json.data.items));
-		});
-	};
-
 	useEffect(() => {
-		fetchMembers();
-		fetchYoutube();
+		dispatch({ type: types.MEMBER.start });
+		dispatch({ type: types.YOUTUBE.start });
+		dispatch({ type: types.GALLERY.start });
 	}, []);
 
 	return (

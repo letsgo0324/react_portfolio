@@ -82,6 +82,7 @@
 
 @media screen and (max-width: $tablet) {
 	#women {
+		height: auto;
 		margin-bottom: 0;
 
 		.inner {
@@ -89,6 +90,8 @@
 			padding: 0 30px;
 
 			.wrap_women {
+				width: 100%;
+
 				h1 {
 					font-size: 32px;
 					margin-bottom: 30px;
@@ -97,9 +100,15 @@
 					writing-mode: horizontal-tb;
 				}
 
+				&::after {
+					content: '';
+					display: block;
+					clear: both;
+				}
+
 				article {
 					width: 49%;
-					height: 70vh;
+					height: 100%;
 					display: block;
 					float: left;
 
@@ -149,11 +158,11 @@
 @media screen and (max-width: $mobile) {
 	#women {
 		margin-bottom: 50px;
+
 		.inner {
 			.wrap_women {
 				article {
 					width: 100%;
-					height: auto;
 
 					&:nth-of-type(1) {
 						margin-right: 0;
