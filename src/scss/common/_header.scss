@@ -40,6 +40,10 @@ header {
 					font: normal 16px/1 'Bebas Neue';
 					color: #222;
 					letter-spacing: 2px;
+
+					&:hover {
+						color: #6fd885;
+					}
 				}
 			}
 		}

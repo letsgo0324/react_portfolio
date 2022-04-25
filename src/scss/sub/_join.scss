@@ -20,67 +20,7 @@
 					border-top: 3px solid #222;
 					padding: 30px;
 					position: relative;
-					transition: 0.5s;
-
-					&:nth-of-type(4) {
-						margin-right: 0;
-					}
-
-					h2 {
-						font: bold 24px/1 'Smooch Sans';
-						color: #222;
-						letter-spacing: 1px;
-						margin-bottom: 20px;
-					}
-					p {
-						font: 18px/1.5 'Smooch Sans';
-						color: #222;
-					}
-					span {
-						position: absolute;
-						bottom: 30px;
-						left: 30px;
-						width: 30px;
-						height: 30px;
-						border-radius: 50%;
-						background: #6fd885;
-						font-size: 20px;
-						line-height: 30px;
-						color: #222;
-						text-align: center;
-						display: none;
-						cursor: pointer;
-					}
-
-					&:hover {
-						background: #222;
-						box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-						transform: translate(-5px, -5px);
-
-						h2 {
-							color: #eee;
-						}
-						p {
-							color: #eee;
-						}
-						span {
-							display: block;
-						}
-					}
-				}
-			}
-
-			.wrap {
-				article {
-					width: 280px;
-					height: 380px;
-					float: left;
-					margin-right: 20px;
-					background: #fff;
-					border-top: 3px solid #222;
-					padding: 30px;
-					position: relative;
-					transition: 0.5s;
+					transition: transform 0.5s;
 
 					&:nth-of-type(4) {
 						margin-right: 0;

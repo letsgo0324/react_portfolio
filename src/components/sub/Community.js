@@ -75,7 +75,7 @@ function Community() {
 		const textareaVal = textarea.current.value.trim();
 
 		if (!inputVal || !textareaVal) {
-			alert('제목과 본문을 모두 입력하세요');
+			alert('Please write title and messages');
 			return;
 		}
 		setPosts([{ title: inputVal, content: textareaVal }, ...posts]);
@@ -91,7 +91,7 @@ function Community() {
 		const textareaVal = editTextarea.current.value.trim();
 
 		if (!inputVal || !textareaVal) {
-			alert('제목과 본문을 모두 입력하세요');
+			alert('Please write title and messages');
 			return;
 		}
 
@@ -134,7 +134,10 @@ function Community() {
 			name={'community'}
 			subName1={'Event'}
 			subName2={'News'}
-			subVisual={'figure2'}>
+			subVisual={'figure2'}
+			subTxt={
+				'While the inside is embossed with the identification number of your item and holds an exclusive dust bag.'
+			}>
 			<div className='event'>
 				<h1>EVENT</h1>
 				<div className='wrap'>

@@ -2,7 +2,7 @@ function Men(props) {
 	const path = process.env.PUBLIC_URL;
 	const scrolled = props.scrolled;
 	const start = props.posStart;
-	const base = -100;
+	const base = 100;
 	const position = scrolled - start + base;
 
 	return (
@@ -17,6 +17,14 @@ function Men(props) {
 						}>
 						MEN
 					</h1>
+					<h2
+						style={
+							position >= 0
+								? { transform: `translateX(${position / 2}px)` }
+								: null
+						}>
+						QUALITY
+					</h2>
 					<article
 						style={
 							position >= 0

@@ -108,18 +108,18 @@
 
 					h2 {
 						font: normal 160px/0.8 'Smooch Sans';
-						color: #222;
+						color: #eee;
 						margin-bottom: 20px;
 					}
 					b {
 						display: block;
 						font: 20px/1.2 'Smooch Sans';
-						color: #444;
+						color: #aaa;
 						margin-bottom: 10px;
 					}
 					p {
 						font: 14px/1.2 'Smooch Sans';
-						color: #444;
+						color: #aaa;
 					}
 				}
 
@@ -191,6 +191,11 @@
 
 									&:last-child {
 										margin-right: 0;
+									}
+
+									&:hover {
+										background: #6fd885;
+										color: #eee;
 									}
 								}
 							}
@@ -281,6 +286,11 @@
 											&:last-child {
 												margin-right: 0;
 											}
+
+											&:hover {
+												background: #bbb;
+												color: #eee;
+											}
 										}
 									}
 								}
@@ -292,6 +302,7 @@
 								.txtBox_inner {
 									border: 1px solid #6fd885;
 									padding: 30px;
+									transition: transform 0.5s;
 
 									h3 {
 										font: bold 20px/1 'Smooch Sans';
@@ -307,6 +318,19 @@
 										color: #6fd885;
 										letter-spacing: 1px;
 										overflow: hidden;
+									}
+
+									&:hover {
+										transform: scale(1.03);
+										background: #6fd885;
+
+										h3 {
+											color: #eee;
+											border-bottom: 2px solid #eee;
+										}
+										p {
+											color: #eee;
+										}
 									}
 								}
 
@@ -332,6 +356,11 @@
 
 											&:last-child {
 												margin-right: 0;
+											}
+
+											&:hover {
+												background: #6fd885;
+												color: #eee;
 											}
 										}
 									}

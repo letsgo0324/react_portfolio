@@ -148,7 +148,10 @@ function Contact() {
 			name={'contact'}
 			subName1={'Location'}
 			subName2={'FAQs'}
-			subVisual={'figure5'}>
+			subVisual={'figure5'}
+			subTxt={
+				'Matching the one-of a-kind status of the vintage selection, each product comes in tailor-made packaging specially created to reflect their design.'
+			}>
 			<div className='location'>
 				<h1>LOCATION</h1>
 				<div className='location_wrap'>

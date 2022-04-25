@@ -70,8 +70,8 @@ function Main() {
 			<Visual />
 			<Women scrolled={scrolled} posStart={pos.current[1]} />
 			<Men scrolled={scrolled} posStart={pos.current[2]} />
-			<Vids scrolled={scrolled} posStart={pos.current[3]} />
 			<Campaign />
+			<Vids />
 			<Stories />
 			<Banner />
 			<News />

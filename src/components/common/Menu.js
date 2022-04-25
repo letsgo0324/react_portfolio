@@ -1,8 +1,6 @@
 import { useState, forwardRef, useImperativeHandle } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const Menu = forwardRef((props, ref) => {
 	const active = { color: '#6fd885' };
@@ -21,7 +19,7 @@ const Menu = forwardRef((props, ref) => {
 				<>
 					<motion.nav
 						initial={{
-							x: 280,
+							x: -280,
 							opacity: 0,
 						}}
 						animate={{
@@ -33,15 +31,8 @@ const Menu = forwardRef((props, ref) => {
 								bounce: 0,
 							},
 						}}
-						exit={{ x: 280, opacity: 0 }}>
+						exit={{ x: -280, opacity: 0 }}>
 						<div className='nav_wrap'>
-							<span>
-								<FontAwesomeIcon
-									icon={faXmark}
-									onClick={() => setOpen(false)}
-								/>
-							</span>
-
 							<h1>
 								<NavLink exact to='/' activeStyle={active}>
 									<img src={props.logoSrc} />

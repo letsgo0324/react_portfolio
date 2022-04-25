@@ -9,6 +9,7 @@ function Btns(props) {
 			<li onClick={() => props.setIndex(5)}></li>
 			<li onClick={() => props.setIndex(6)}></li>
 			<li onClick={() => props.setIndex(7)}></li>
+			<li onClick={() => props.setIndex(8)}></li>
 		</ul>
 	);
 }

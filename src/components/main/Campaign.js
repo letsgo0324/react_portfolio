@@ -11,7 +11,7 @@ function Campaign() {
 	return (
 		<>
 			<section id='campaign' className='myScroll'>
-				<div className='inner'>
+				<div className='campaign_outline'>
 					<div className='campaign_inner'>
 						<div className='campaign_wrap'>
 							<div className='campaign_tit'>

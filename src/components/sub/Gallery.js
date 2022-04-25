@@ -3,10 +3,8 @@ import Masonry from 'react-masonry-component';
 import { useEffect, useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { motion } from 'framer-motion';
-//import { startAnimation } from 'framer-motion/types/animation/utils/transitions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import * as types from '../../redux/actionType';
 
 import Layout from '../common/Layout';
 import Popup from '../common/Popup';
@@ -106,7 +104,10 @@ function Gallery() {
 				name={'gallery'}
 				subName1={'Shop'}
 				subName2={'Campaign'}
-				subVisual={'figure3'}>
+				subVisual={'figure3'}
+				subTxt={
+					'A collection of vintage items, selected by the Creative Director and Gucci archivists for their particularity and character, and reconditioned by in-house artisans.'
+				}>
 				{loadingImg ? (
 					<img className='loadingImg' src={path + '/img/loading.gif'} />
 				) : null}

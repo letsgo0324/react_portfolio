@@ -3,7 +3,7 @@ nav {
 	height: 100vh;
 	position: fixed;
 	top: 0;
-	right: 0;
+	left: 0;
 	background: #222;
 	z-index: 5;
 	padding: 50px;
@@ -13,20 +13,10 @@ nav {
 		width: 100%;
 		height: 100%;
 
-		span {
-			color: #eee;
-			display: block;
-			position: absolute;
-			top: 0;
-			right: 0;
-			font-size: 30px;
-		}
 		h1 {
-			position: absolute;
-			top: 50px;
-			left: 0;
 			width: 75px;
-			height: 35px;
+			margin-bottom: 40px;
+
 			img {
 				width: 100%;
 				height: 100%;
@@ -35,11 +25,17 @@ nav {
 		}
 
 		#gnb {
-			position: absolute;
 			top: 100px;
 			li {
 				a {
+					font: 22px/1.8 'Smooch Sans';
 					color: #eee;
+					letter-spacing: 1px;
+					text-transform: uppercase;
+
+					&:hover {
+						color: #6fd885;
+					}
 				}
 			}
 		}

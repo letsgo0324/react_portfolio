@@ -5,7 +5,7 @@ function Member() {
 	const members = useSelector((state) => state.memberReducer.members);
 
 	return (
-		<section id='member'>
+		<section id='member' className='myScroll'>
 			<div className='inner'>
 				<div className='wrap'>
 					<article>

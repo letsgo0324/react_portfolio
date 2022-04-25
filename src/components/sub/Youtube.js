@@ -36,7 +36,10 @@ function Youtube() {
 				name={'youtube'}
 				subName1={'Video'}
 				subName2={'Collaboration'}
-				subVisual={'figure4'}>
+				subVisual={'figure4'}
+				subTxt={
+					'Each vintage item is one-of-a-kind, only available once and numbered to coincide with the year of the drop—a detail that further emphasizes their very limited availability.'
+				}>
 				<div className='video'>
 					<div className='videoList'>
 						<h1>VIDEO</h1>

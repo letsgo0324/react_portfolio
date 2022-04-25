@@ -95,6 +95,7 @@ function Join() {
 	const handleReset = () => {
 		setVal(initVal);
 		setErr({});
+		setIsSubmit(false);
 	};
 
 	useEffect(() => {
@@ -116,7 +117,10 @@ function Join() {
 			name={'join'}
 			subName1={'Privacy'}
 			subName2={'Account'}
-			subVisual={'figure6'}>
+			subVisual={'figure6'}
+			subTxt={
+				'Following Vaults geometric theme, the outside of the packaging is defined by different shapes and patterns.'
+			}>
 			<div className='privacy'>
 				<h1>PRiVACY</h1>
 				<div className='wrap'>

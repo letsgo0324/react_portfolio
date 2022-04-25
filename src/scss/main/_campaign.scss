@@ -1,11 +1,10 @@
 #campaign {
 	width: 100%;
-	height: 70vh;
-	padding: 50px 0;
+	height: 100vh;
 	margin-bottom: 100px;
 
-	.inner {
-		width: 1180px;
+	.campaign_outline {
+		width: 100%;
 		height: 100%;
 		margin: 0 auto;
 		position: relative;
@@ -31,6 +30,7 @@
 					width: 220px;
 					border-top: 5px solid #222;
 					margin-right: 20px;
+					margin-left: 30px;
 
 					h1 {
 						font: normal 50px/1 'Bebas Neue';
@@ -142,8 +142,7 @@
 	#campaign {
 		height: auto;
 
-		.inner {
-			width: 100%;
+		.campaign_outline {
 			padding: 0 30px;
 
 			.campaign_inner {
@@ -156,6 +155,7 @@
 					.campaign_tit {
 						width: 100%;
 						border-top: none;
+						margin-left: 0;
 						margin-right: 0;
 						margin-bottom: 30px;
 
@@ -190,7 +190,7 @@
 
 @media screen and (max-width: $mobile) {
 	#campaign {
-		.inner {
+		.campaign_outline {
 			.campaign_inner {
 				.campaign_wrap {
 					article {

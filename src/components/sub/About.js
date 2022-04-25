@@ -20,7 +20,10 @@ function About() {
 			name={'about'}
 			subName1={'Members'}
 			subName2={'Global'}
-			subVisual={'figure1'}>
+			subVisual={'figure1'}
+			subTxt={
+				'Vault presents a highly curated assortment of rare finds from Gucci’s past, each the one and only of its kind.'
+			}>
 			<div className='memberList'>
 				<h1>MEMBERS</h1>
 				<div className='wrap'>
