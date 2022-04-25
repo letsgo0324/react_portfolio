@@ -40,7 +40,7 @@
 				position: absolute;
 				right: 0;
 				top: 30px;
-				width: 40vw;
+				width: 35vw;
 				height: 210px;
 				animation: moveImg 1s alternate ease-in;
 
@@ -60,6 +60,7 @@
 					height: 100%;
 					object-fit: cover;
 					object-position: left center;
+					vertical-align: middle;
 				}
 
 				&::after {
@@ -78,7 +79,7 @@
 					position: absolute;
 					bottom: -30px;
 					right: 30px;
-					width: 40vw;
+					width: 35vw;
 					height: 210px;
 					background: rgba(111, 216, 134, 0.4);
 					animation: moveBg 2s alternate ease-in-out;
