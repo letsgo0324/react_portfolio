@@ -51,3 +51,26 @@
 		}
 	}
 }
+
+@media screen and (max-width: $tablet) {
+	#visual {
+		.inner {
+			width: 100%;
+			padding: 0 30px;
+
+			h1 {
+				font-size: 90px;
+			}
+			p {
+				font-size: 20px;
+			}
+		}
+	}
+}
+@media screen and (max-width: $mobile) {
+	#visual {
+		.inner p {
+			font-size: 16px;
+		}
+	}
+}
