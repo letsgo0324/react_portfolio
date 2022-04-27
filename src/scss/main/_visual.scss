@@ -6,6 +6,12 @@
 	overflow: hidden;
 	z-index: 1;
 
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: none;
+	}
 	video {
 		width: 100%;
 		height: 100%;
@@ -54,6 +60,13 @@
 
 @media screen and (max-width: $tablet) {
 	#visual {
+		img {
+			display: block;
+		}
+		video {
+			display: none;
+		}
+
 		.inner {
 			width: 100%;
 			padding: 0 30px;

@@ -1,4 +1,3 @@
-import { text } from '@fortawesome/fontawesome-svg-core';
 import React, { useState, useEffect, useRef } from 'react';
 import Layout from '../common/Layout';
 
@@ -31,7 +30,6 @@ function Community() {
 				'Emerging from a backdrop of dozens of lilac-hued jasmine flowers, Gucci Bloom Acqua Di Fiori by Nuria Val, captured in Japan by Coke Bartrina. Peonies and daisies from Clare Nicolson’s favorite flower market in London are combined with pastel colors and all of the Gucci Bloom scents, shot by photographer Rosie Harriet Ellis. Collecting treasures from the South England’s coastline, Caroline South’s images of Gucci Bloom Nettare di Fiori include fragments of shells and pebbles.',
 			image: `${path}/img/event_img2.jpg`,
 		},
-
 		{
 			num: '03',
 			title: 'ANTICA LIBRERIA CASCIANELLI',
