@@ -4,15 +4,6 @@ import Layout from '../common/Layout';
 function Community() {
 	const path = process.env.PUBLIC_URL;
 
-	const today = () => {
-		let now = new Date();
-		let todayYear = now.getFullYear();
-		let todayMonth = now.getMonth();
-		let todayDate = now.getDate();
-		let todayHours = now.getHours();
-		let todayMinutes = now.getMinutes();
-	};
-
 	const eventArr = [
 		{
 			num: '01',

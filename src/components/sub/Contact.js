@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import Layout from '../common/Layout';
 
 function Contact() {
+	//=======================================================================location
 	const path = process.env.PUBLIC_URL;
 
 	const container = useRef(null);
@@ -106,6 +107,7 @@ function Contact() {
 		};
 	}, [index]);
 
+	//=======================================================================faqs
 	const faqArr = [
 		{
 			month: '04',
@@ -141,7 +143,7 @@ function Contact() {
 		},
 	];
 
-	const [faqCon, setFaqCon] = useState(faqArr);
+	const [faqCon] = useState(faqArr);
 
 	return (
 		<Layout
@@ -196,7 +198,7 @@ function Contact() {
 				<div className='wrap'>
 					{faqCon.map((con, idx) => {
 						return (
-							<article>
+							<article key={idx}>
 								<h2>{con.category}</h2>
 								<span>{con.month}</span>
 								<span>{con.date}</span>
